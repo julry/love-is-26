@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../assets/fonts/HelveticaNeue/HelveticaNeue-Light.otf') format('opentype'),
+     local('HelveticaNeueLight'), local('HelveticaNeue-Ligh'), local('HelveticaNeue-light');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../assets/fonts/HelveticaNeue/HelveticaNeue-Roman.otf') format('opentype'),
+    local('HelveticaNeueRoman'), local('HelveticaNeue-Roman'), local('HelveticaNeue-Regular'), local('HelveticaNeueRegular');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SoyuzGrotesk';
+    src: url('../assets/fonts/SoyuzGrotesk/SoyuzGrotesk-Bold.otf') format('opentype'),
+    url('../assets/fonts/SoyuzGrotesk/SoyuzGrotesk-Bold.ttf') format('truetype'),
+    local('SoyuzGroteskBold'), local('SoyuzGrotesk-Bold'), local('Soyuz-Grotesk-Bold');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,1 @@
+export { companiesConfig } from './companies-config';
