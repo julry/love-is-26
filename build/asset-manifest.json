@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.67dbe571.css",
-    "main.js": "./static/js/main.45a57dbd.js",
+    "main.js": "./static/js/main.366bc612.js",
     "static/media/bgDesktop4.png": "./static/media/bgDesktop4.61d6347a603594014f72.png",
     "static/media/bgDesktop5.png": "./static/media/bgDesktop5.d65c251eb3eeacac7016.png",
     "static/media/bgDesktop11.png": "./static/media/bgDesktop11.01cd454799ee8898fc81.png",
@@ -125,10 +125,10 @@
     "static/media/bgDesk.svg": "./static/media/bgDesk.2e90c86fe4394c2d3c8d828af9891629.svg",
     "index.html": "./index.html",
     "main.67dbe571.css.map": "./static/css/main.67dbe571.css.map",
-    "main.45a57dbd.js.map": "./static/js/main.45a57dbd.js.map"
+    "main.366bc612.js.map": "./static/js/main.366bc612.js.map"
   },
   "entrypoints": [
     "static/css/main.67dbe571.css",
-    "static/js/main.45a57dbd.js"
+    "static/js/main.366bc612.js"
   ]
 }

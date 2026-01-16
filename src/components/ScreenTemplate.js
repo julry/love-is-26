@@ -93,6 +93,10 @@ const CookieContent = styled.div`
     padding: ${({ $ratio }) => $ratio * 17}px ${({ $ratio }) => $ratio * 25}px;
     width: 100%;
     font-size: ${({ $ratio }) => $ratio * 12}px;
+
+    ${media.desktop`
+        font-size: 16px;
+    `}
 `;
 
 const OkButton = styled(Button)`
