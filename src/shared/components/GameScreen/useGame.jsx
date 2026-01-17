@@ -56,7 +56,8 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
         const heartHeight = heartSize.height * sizeKoef * koef;
         const heartWidth = heartSize.width * sizeKoef * koef;
         const y = isFirst && !isWide ? (height - heartHeight) / 2 - (50 * koef) : (height - heartHeight) / 2 ;
-        const heartPositionY = y - (window.innerHeight - height) / 2;
+        const headerDistance = (window.innerHeight - height) / 2;
+        const heartPositionY = y - headerDistance;
 
         // Инициализация игры после монтирования компонента
         const initGame = async () => {
@@ -121,7 +122,7 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
                             const puzzleWidth = puzzle.width * koef * sizeKoef;
                             const puzzleHeight = puzzle.height * koef * sizeKoef;
                             let xKoef = isLandscape ? Math.min(width / 1270, 1) : Math.max(width / 375, 1);
-                            let dif = isWide ? Math.max(height - 750, 0) : Math.max(height - 650, 0);
+                            let dif = isWide ? Math.max((height+  headerDistance) - 750, 0) / 2 : Math.max((height + headerDistance) - 650, 0) / 2;
 
                             if (isLandscape) {
                                 dif = 0;
