@@ -55,7 +55,7 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
         const sizeKoef = (isWide ? 2.101 : 1);
         const heartHeight = heartSize.height * sizeKoef * koef;
         const heartWidth = heartSize.width * sizeKoef * koef;
-        const y = isFirst && !isWide ? (height - heartHeight) / 2 - (50 * koef) : (height - heartHeight) / 2 ;
+        const y = isFirst && !isWide ? (height - heartHeight) / 2 - (50 * koef) : (height - heartHeight) / 2;
         const headerDistance = (window.innerHeight - height) / 2;
         const heartPositionY = y - headerDistance;
 

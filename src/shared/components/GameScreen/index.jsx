@@ -63,7 +63,7 @@ const EndImageWrapper = styled(motion.div)`
     align-items: center;
     justify-content: center;
     flex: 1;
-    max-height: ${({$height}) =>$height ? $height + 'px' : 'unset'};
+    max-height: ${({ $height }) => $height ? $height + 'px' : 'unset'};
     z-index: 2;
     padding-bottom: ${({ $heartPositionY }) => $heartPositionY}px;
 
@@ -98,11 +98,9 @@ const EndContent = styled(motion.div)`
     position: absolute;
     left: 50%;
     width: 100%;
-    /* margin-top: ${({ $heartHeight }) => -1 * $heartHeight / 2}px; */
     bottom: ${({ $ratio }) => $ratio * 40}px;
     max-width: ${({ $ratio }) => $ratio * 290}px;
     transform-origin: 0 100%;
-    /* flex: 1; */
 
     ${media.tablet`
         max-width: ${({ $ratio }) => $ratio * 490}px;
@@ -126,20 +124,13 @@ const ButtonStyled = styled(Button)`
     `}
 `;
 
-const Shining = styled.svg`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
-
 const BottomLogo = styled(motion.div)`
     position: absolute;
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
-    width: ${({$width}) => $width}px;
-    height: ${({$height}) => $height}px;
+    width: ${({ $width }) => $width}px;
+    height: ${({ $height }) => $height}px;
 
     @media screen and (max-height: 900px) {
         bottom: 30px;
@@ -152,10 +143,10 @@ const BottomLogo = styled(motion.div)`
 
 const LogoWrapper = styled.div`
     position: absolute;
-    top: ${({$top}) => $top ?? 'var(--spacing_x3)'};
+    top: ${({ $top }) => $top ?? 'var(--spacing_x3)'};
     left: var(--spacing_x3);
-    width: ${({$width}) => $width}px;
-    height: ${({$height}) => $height}px;
+    width: ${({ $width }) => $width}px;
+    height: ${({ $height }) => $height}px;
 
     & img {
         width: 100%;
@@ -166,27 +157,27 @@ const LogoWrapper = styled.div`
 
 const LandscapeInfo = styled.div`
     position: absolute;
-    top: ${({$ratio}) => $ratio * 75}px;
+    top: ${({ $ratio }) => $ratio * 75}px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     width: 100%;
-    max-width: ${({$ratio}) => $ratio * 291}px;
-    font-size: ${({$ratio}) => $ratio * 12}px;
+    max-width: ${({ $ratio }) => $ratio * 291}px;
+    font-size: ${({ $ratio }) => $ratio * 12}px;
 
 
     ${media.desktop`
         top: 60px;
         max-width: 562px;
-        font-size: ${({$ratio}) => $ratio * 23}px;
+        font-size: ${({ $ratio }) => $ratio * 23}px;
     `}
 `;
 
 const LandscapeInfoContent = styled.div`
-    padding: ${({$ratio}) => $ratio * 22}px;
+    padding: ${({ $ratio }) => $ratio * 22}px;
 
     ${media.desktop`
-        padding: ${({$ratio}) => $ratio * 38}px ${({$ratio}) => $ratio * 22}px;
+        padding: ${({ $ratio }) => $ratio * 38}px ${({ $ratio }) => $ratio * 22}px;
     `}
 `;
 
@@ -213,7 +204,7 @@ export const GameScreen = ({ companyId }) => {
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
 
     // const isFirst = useMemo(() => true, [openedCompanies]);
-    const isFirst = useMemo(() => !openedCompanies.length, [openedCompanies]);
+    const isFirst = useMemo(() => !openedCompanies.length, []);
 
     const handleBack = () => {
         next(SCREEN_NAMES.LOBBY);
@@ -253,11 +244,11 @@ export const GameScreen = ({ companyId }) => {
         setIsEnd(true);
     }, []);
 
-     useEffect(() => {
+    useEffect(() => {
         const preventDefault = (e) => e.preventDefault();
-        
+
         document.body.addEventListener('touchmove', preventDefault, { passive: false });
-        
+
         return () => document.body.removeEventListener('touchmove', preventDefault);
     }, [])
 
@@ -269,7 +260,7 @@ export const GameScreen = ({ companyId }) => {
         <Wrapper $bg={isLandscape ? bgPicLand : bgPic}>
             {isLandscape ? (
                 <LogoWrapper $width={141} $height={102} $top={'var(--spacing_x3)'}>
-                    <img src={logoCommon} alt=""/>
+                    <img src={logoCommon} alt="" />
                 </LogoWrapper>
             ) : (
                 <LogoWrapper $width={logo.sizeSm.width * ratio} $height={logo.sizeSm.height * ratio} $top={logo.sizeSm.top * ratio + 'px'}>
@@ -293,82 +284,90 @@ export const GameScreen = ({ companyId }) => {
             </Header>
             {isHelpBlock && !isEnd && (
                 <LandscapeInfo $ratio={ratio}>
-                    <GlassBlock 
+                    <GlassBlock
                         borderRadius={isLandscape ? 40 : 30}
                         $angle={105}
                     >
                         <LandscapeInfoContent $ratio={ratio}>
                             <p>
-                                Перетаскивай фрагменты, чтобы соединить сердце воедино. Когда пазл будет собран, 
+                                Перетаскивай фрагменты, чтобы соединить сердце воедино. Когда пазл будет собран,
                                 ты узнаешь, что для компании значит любовь.
                             </p>
                         </LandscapeInfoContent>
                     </GlassBlock>
                 </LandscapeInfo>
             )}
-            <CanvasWrapper ref={gameContainerRef} animate={isEnd ? { opacity: 0 } : {}} transition={{ duration: 1, delay: 0.5 }} />
+            <CanvasWrapper 
+                ref={gameContainerRef} 
+                animate={isEnd ? { opacity: 0 } : {}} 
+                transition={{ duration: 1, delay: 0.5 }} 
+            />
             <AnimatePresence>
                 {isEnd && (
-                    <EndModal $height={height} initial={{ opacity: 0 }} animate={{ opacity: 1, y: -infoHeight}} 
-                    transition={{y: {
-                            delay: 1.4,
-                            duration: 0.4
-                        }, opacity: { duration: 0.6, delay: 0.2 }
+                    <EndModal 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1, y: -infoHeight }}
+                        transition={{
+                            y: {
+                                delay: 1.4,
+                                duration: 0.4
+                            }, opacity: { duration: 0.6, delay: 0.2 }
                         }}
                     >
-                        <EndImageWrapper $height={!isFirst ? undefined : height} $heartPositionY={heartPositionY}>
+                        <EndImageWrapper $height={isFirst ? height : undefined} $heartPositionY={heartPositionY}>
                             <svg width={heartWidth} height={heartHeight} viewBox={`0 0 ${heartSize.width} ${heartSize.height}`} fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_d_541_5920)">
-                                    <rect x="19%" y="19%" width={heartSize.width * 0.62} height={heartSize.height * 0.62} fill="url(#pattern0_523_4673)" shape-rendering="crispEdges"/>
+                                    <rect x="19%" y="19%" width={heartSize.width * 0.62} height={heartSize.height * 0.62} fill="url(#pattern0_523_4673)" shape-rendering="crispEdges" />
                                 </g>
-                            <defs>
-                            <filter id="filter0_d_541_5920" x="0" y="0" width="367" height="352" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                            <feOffset/>
-                            <feGaussianBlur stdDeviation="35"/>
-                            <feComposite in2="hardAlpha" operator="out"/>
-                            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0"/>
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_541_5920"/>
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_541_5920" result="shape"/>
-                            </filter>
-                            <pattern id="pattern0_523_4673" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <image x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet" href={finalHeart} />
-                            </pattern>
-                            </defs>
+                                <defs>
+                                    <filter id="filter0_d_541_5920" x="0" y="0" width="367" height="352" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset />
+                                        <feGaussianBlur stdDeviation="35" />
+                                        <feComposite in2="hardAlpha" operator="out" />
+                                        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_541_5920" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_541_5920" result="shape" />
+                                    </filter>
+                                    <pattern id="pattern0_523_4673" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <image x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet" href={finalHeart} />
+                                    </pattern>
+                                </defs>
                             </svg>
                         </EndImageWrapper>
                     </EndModal>
                 )}
-                 <EndContent
-                        ref={$info}
-                        $ratio={ratio}
-                        $heartHeight={heartSize.height}
-                        initial={{ x: '-50%', y: '50vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {}} 
-                        transition={{y: {
+                <EndContent
+                    ref={$info}
+                    $ratio={ratio}
+                    $heartHeight={heartSize.height}
+                    initial={{ x: '-50%', y: '50vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {}}
+                    transition={{
+                        y: {
                             delay: 1.4,
                             duration: 0.4,
                             origin: '0 100%',
-                        }, 
-                        }}>
-                        <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
-                            <EndTextWrapper>
-                                <Title>заголовок</Title>
-                                <EndText>
-                                    Текст с СТА компании
-                                </EndText>
-                                <ButtonStyled onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
-                            </EndTextWrapper>
-                        </GlassBlock>
-                    </EndContent>
+                        },
+                    }}>
+                    <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
+                        <EndTextWrapper>
+                            <Title>заголовок</Title>
+                            <EndText>
+                                Текст с СТА компании
+                            </EndText>
+                            <ButtonStyled onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
+                        </EndTextWrapper>
+                    </GlassBlock>
+                </EndContent>
                 {isLandscape && !isEnd && (
-                    <BottomLogo exit={{opacity: 0}} $width={logo.sizeLg.width} $height={logo.sizeLg.height}>
+                    <BottomLogo exit={{ opacity: 0 }} $width={logo.sizeLg.width} $height={logo.sizeLg.height}>
                         {logo.image}
                     </BottomLogo>
                 )}
                 {
                     isRules && (
-                        <ModalWrapper exit={{opacity: 0}} initial={{opacity: 0}} animate={{opacity: 1}}>
+                        <ModalWrapper exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                             <RulesContent onClick={() => setIsRules(false)} />
                         </ModalWrapper>
                     )
