@@ -249,9 +249,8 @@ export const GameScreen = ({ companyId }) => {
 
 
     const stopGame = useCallback(() => {
-        setOpenedCompanies(prev => [...prev, companyId]);
+        setOpenedCompanies(prev => prev?.includes?.(companyId) ? prev : [...prev, companyId]);
         setIsEnd(true);
-        
     }, []);
 
      useEffect(() => {
@@ -261,10 +260,6 @@ export const GameScreen = ({ companyId }) => {
         
         return () => document.body.removeEventListener('touchmove', preventDefault);
     }, [])
-
-    // useEffect(() => {
-    //     setTimeout(() => setIsEnd(true), 1000);
-    // }, [])
 
     const { gameContainerRef, } = useGame({ width, height, dpr, isFirst, company, initialPuzzles: piecesConfig.avito, stopGame });
 
