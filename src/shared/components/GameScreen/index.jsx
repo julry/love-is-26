@@ -234,8 +234,7 @@ export const GameScreen = ({ companyId }) => {
     const $info = useRef();
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
 
-    const isFirst = useMemo(() => false, [openedCompanies]);
-    // const isFirst = useMemo(() => !openedCompanies.length, []);
+    const isFirst = useMemo(() => !openedCompanies.length, []);
 
     const handleBack = () => {
         next(SCREEN_NAMES.LOBBY);
