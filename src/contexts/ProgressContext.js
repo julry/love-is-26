@@ -1,9 +1,7 @@
 import { FTClient } from 'ft-client';
-import {createContext, useCallback, useContext, useEffect, useRef, useState} from 'react'
+import {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {screens} from "../constants/screens";
-// import {getUrlParam} from "../utils/getUrlParam";
 import { SCREEN_NAMES } from '../constants/screens';
-import {useResizeObserver} from '../hooks/useResizeObserver';
 import {getUrlParam} from '../utils/getUrlParam';
 
 const INITIAL_STATE = {
@@ -19,9 +17,12 @@ export function ProgressProvider(props) {
     const [openedCompanies, setOpenedCompanies] = useState([]);
     const [isFinished, setIsFinished] = useState(false);
     const [isPlayed, setIsPlayed] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(false);
+    const [isMusicPlaying, setIsMusicPlaying] = useState(false);
     const screen = screens[currentScreen];
 
     const client = useRef();
+    const audioRef = useRef();
 
     useEffect(() => {
         const checkLandscape = () => setIsLandscape(window?.innerWidth > window?.innerHeight);
@@ -39,7 +40,26 @@ export function ProgressProvider(props) {
         );
     }, []);
 
+    const playMusic = () => {
+        audioRef.current.play().then(() => {
+            setIsMusicPlaying(true);
+        })
+        .catch(error => {
+            console.log('Ошибка воспроизведения:', error);
+        });
+    }
+
+    const handleToggleAudio = () => {
+        if (isMusicPlaying) {
+            audioRef.current.pause();
+            setIsMusicPlaying(false);
+        } else {
+            playMusic();
+        }
+    }
+
     const registrateEmail = async ({email, isAdsAgreed}) => {
+        setIsRegistered(true);
     //    try {
     //         const emailUser = await client?.current.findRecord('email', email);
     //         if (emailUser) return;
@@ -65,6 +85,9 @@ export function ProgressProvider(props) {
         setOpenedCompanies,
         setIsPlayed,
         isPlayed,
+        handleToggleAudio,
+        audioRef,
+        isMusicPlaying
     }
 
     return (

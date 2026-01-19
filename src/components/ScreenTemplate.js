@@ -5,6 +5,10 @@ import { DESKTOP_WIDTH } from '../constants';
 import { GlassBlock } from '../shared/components/GlassBlock';
 import { Button } from '../shared/components/Button';
 import { media } from '../styles/mixins';
+import audioSrcWav from '../assets/sounds/loveis.wav';
+import audioSrcMp3 from '../assets/sounds/loveis.mp3';
+import audioSrcOgg from '../assets/sounds/loveis.ogg';
+import { useProgress } from '../contexts/ProgressContext';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -105,6 +109,7 @@ const OkButton = styled(Button)`
 `;
 
 export function ScreenTemplate(props) {
+    const { audioRef } = useProgress();
     const [isCookies, setIsCookies] = useState(false);
 
     const { children } = props;
@@ -128,6 +133,11 @@ export function ScreenTemplate(props) {
         <SizeRatioContextProvider target={wrapperInnerRef}>
             {(sizeRatio) => (
                 <Wrapper ref={wrapperRef}>
+                    <audio ref={audioRef} loop>
+                        <source src={audioSrcOgg} type="audio/ogg" />
+                        <source src={audioSrcMp3} type="audio/mpeg" />
+                        <source src={audioSrcWav} type="audio/wav" />
+                    </audio>
                     <WrapperInner ref={wrapperInnerRef}>
                         <Content $sizeRatio={sizeRatio}>
                             {children}

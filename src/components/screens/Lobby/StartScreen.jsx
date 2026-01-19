@@ -7,6 +7,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from 'framer-motion';
 import { RulesContent } from "./RulesContent";
 import { media } from "../../../styles/mixins";
+import { useProgress } from "../../../contexts/ProgressContext";
 
 const StartButton = styled(Button)`
     width: ${({ $ratio }) => $ratio * 69}px !important;
@@ -45,8 +46,14 @@ const Wrapper = styled(motion.div)`
 `;
 
 export const StartScreen = ({ onClose }) => {
+    const { handleToggleAudio } = useProgress();
     const ratio = useSizeRatio();
     const [isRules, setIsRules] = useState(false);
+
+    const handleStart = () => {
+        handleToggleAudio();
+        setIsRules(true);
+    }
 
     return (
         <ModalWrapper exit={{ opacity: 0 }}>
@@ -62,7 +69,7 @@ export const StartScreen = ({ onClose }) => {
                                 <StartButton
                                     $ratio={ratio}
                                     isIcon
-                                    onClick={() => setIsRules(true)}
+                                    onClick={handleStart}
                                     glassProps={{
                                         $percentage: 15,
                                         $angle: 125,
