@@ -5,6 +5,8 @@ import { useSizeRatio } from '../../../contexts/SizeRatioContext';
 import { GlassBlock } from '../../../shared/components/GlassBlock';
 import { ModalWrapper } from '../../../shared/components/Modal';
 import { useState } from 'react';
+import { emailRegExp } from '../../../constants/regexp';
+import { useProgress } from '../../../contexts/ProgressContext';
 
 const ModalWrapperStyled = styled(ModalWrapper)`
     padding: var(--spacing_x3);
@@ -49,8 +51,10 @@ const ButtonStyled = styled(Button)`
     ${media.desktop`
         padding: 33px 40px;
     `}
-`;
 
+    transition: opacity 0.3s;
+    opacity: ${({$disabled}) => $disabled ? 0.6 : 1};
+`;
 
 const Input = styled.input`
     position: relative;
@@ -134,40 +138,66 @@ const RadioButtonLabel = styled.label`
     & + &  {
         margin-top: var(--spacing_x2);
     }
+`;
 
-    & ${InputRadioButton}:checked + ${RadioIconStyled} {
-        background: #7CDB01;
-    }
+const GlassBlockStyled = styled(GlassBlock)`
+    ${({$isError}) => $isError ? '&::before {background-color: red;padding: 2px;}' : ''};
+`;
 
-    & ${InputRadioButton}:checked + ${RadioIconStyled}::after {
-       content: '';
+const AgreedIcon = styled.div`
+    position: absolute;
+    border-radius: 20px;
+    top: 43%;
+    left: 33%;
+    width: 9px;
+    height: 2px;
+    background-color: #FFF6EF;
+    transform: rotate(-60deg);
+
+    &::after {
+        content: '';
        position: absolute;
        border-radius: 20px;
-       top: 47%;
-       left: 21%;
+       top: -100%;
+       left: -20%;
        height: 2px;
-       width: 4px;
-       transform: rotate(45deg);
+       width: 6px;
+       transform: rotate(-85deg);
        background-color: white;
-    }
-
-    & ${InputRadioButton}:checked + ${RadioIconStyled}::before {
-       content: '';
-       position: absolute;
-       border-radius: 20px;
-       top: 40%;
-       left: 33%;
-       width: 7px;
-       height: 2px;
-       background-color: white;
-       transform: rotate(-40deg);
     }
 `;
 
 export const Form = ({onClick}) => {
-    const [isAgreed, setIsAgreed] = useState(false);
-    const [isMailsAgreed, setIsMailsAgreed] = useState(false);
+    const {registrateEmail} = useProgress();
+    const [email, setEmail] = useState('');
+    const [isAgreed, setIsAgreed] = useState(true);
+    const [isMailsAgreed, setIsMailsAgreed] = useState(true);
+    const [isSending, setIsSending] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(true);
+    
     const ratio = useSizeRatio();
+    const isButtonDisabled = !isAgreed || !email || !isCorrect;
+
+    const handleSubmit = async () => {
+        if (isButtonDisabled) return;
+        setIsSending(true);
+        await registrateEmail({email, isMailsAgreed});
+        onClick();
+    }
+
+    const handleBlur = () => {
+        if (email.match(emailRegExp) || !email) {
+            setIsCorrect(true);
+        } else {
+            setIsCorrect(false);
+        }
+    };
+
+    const handleChange = (e) => {
+        if (isSending) return;
+        setIsCorrect(true);
+        setEmail(e.target.value);
+    };
 
     return (
         <ModalWrapperStyled>
@@ -175,9 +205,19 @@ export const Form = ({onClick}) => {
                 <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
                     <GameEndContent>
                         <Title>Оставь почту, чтобы принять участие в розыгрыше крутых призов!</Title>
-                        <GlassBlock $angle={95}>
-                            <Input placeholder='email@email.ru' />
-                        </GlassBlock>
+                        <GlassBlockStyled 
+                            $angle={95} 
+                            $isError={!isCorrect}
+                        >
+                            <Input 
+                                type="email" 
+                                id="email"
+                                value={email} 
+                                onChange={handleChange} 
+                                onBlur={handleBlur} 
+                                placeholder='email@email.ru' 
+                            />
+                        </GlassBlockStyled>
                         <CheckBoxesWrapper>
                             <RadioButtonLabel $ratio={ratio}>
                                 <InputRadioButton
@@ -189,6 +229,7 @@ export const Form = ({onClick}) => {
                                 <IconWrapper>
                                     <GlassBlock $angle={125} $percentage={2} borderRadius={5}>
                                         <RadioIconStyled $ratio={ratio} />
+                                        {isAgreed && (<AgreedIcon />)}
                                     </GlassBlock>
                                 </IconWrapper>
                                 <span>
@@ -234,6 +275,7 @@ export const Form = ({onClick}) => {
                                 <IconWrapper>
                                     <GlassBlock $angle={125} $percentage={2} borderRadius={5}>
                                         <RadioIconStyled $ratio={ratio} />
+                                        {isMailsAgreed && (<AgreedIcon />)}
                                     </GlassBlock>
                                 </IconWrapper>
                                 <span>
@@ -255,7 +297,8 @@ export const Form = ({onClick}) => {
                                 $angle: 125,
                             }}
                             $ratio={ratio}
-                            onClick={onClick}
+                            onClick={handleSubmit}
+                            $disabled={isButtonDisabled}
                         >
                             отправить
                         </ButtonStyled>

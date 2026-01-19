@@ -106,12 +106,13 @@ const GameInfo = styled.div`
 
 export const Lobby = () => {
     const ratio = useSizeRatio();
-    const { isLandscape, openedCompanies, isPlayed, setIsPlayed, next, handleToggleAudio, isMusicPlaying } = useProgress();
+    const { isLandscape, openedCompanies, isPlayed, setIsPlayed, next, handleToggleAudio, isMusicPlaying, isRegistered } = useProgress();
     const [isGameStarted, setIsGameStarted] = useState(isPlayed);
     const [isShownStartScreen, setIsShownStartScreen] = useState(!isPlayed);
     const [isShownRules, setIsShownRules] = useState(false);
     const [isFormScreen, setIsFormScreen] = useState(false);
-    const [isEndPart, setIsEndPart] = useState(false);
+    const isFinished = openedCompanies.length === companiesLength;
+    const [isEndPart, setIsEndPart] = useState(isFinished && !isRegistered);
 
     const handleCloseStartScreen = () => {
         setIsPlayed(true);
@@ -133,7 +134,7 @@ export const Lobby = () => {
     };
 
     return (
-        <AnimatedBg isGameStarted={isGameStarted}>
+        <AnimatedBg isGameStarted={isGameStarted} isFinished={isFinished}>
             <Header>
                 <Logo $ratio={ratio} src={logo} />
                 <ButtonWrapper>

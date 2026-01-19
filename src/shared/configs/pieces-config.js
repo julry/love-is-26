@@ -61,6 +61,15 @@ import ft5 from '../../assets/images/ft/ft5.png';
 import ft6 from '../../assets/images/ft/ft6.png';
 import ft7 from '../../assets/images/ft/ft7.png';
 
+import ya0 from '../../assets/images/ya/ya0.png';
+import ya1 from '../../assets/images/ya/ya1.png';
+import ya2 from '../../assets/images/ya/ya2.png';
+import ya3 from '../../assets/images/ya/ya3.png';
+import ya4 from '../../assets/images/ya/ya4.png';
+import ya5 from '../../assets/images/ya/ya5.png';
+import ya6 from '../../assets/images/ya/ya6.png';
+import ya7 from '../../assets/images/ya/ya7.png';
+
 export const piecesConfig = {
     avito: [
         {
@@ -1747,6 +1756,247 @@ export const piecesConfig = {
                 {x: 69, y: 75},
                 {x: 53, y: 95},
                 {x: 0, y: 113},
+            ]
+        },
+    ],
+    ya: [
+        {
+            id: 'ya0',
+            originalPosition: {
+                x: 71,
+                y: 79,
+            },
+            position: {
+                x: 103,
+                y: 513,
+            },
+            positionLandscape: {
+                x: -5,
+                y: 616,
+            },
+            positionBottom: {
+                x: 103,
+                y: 513,
+            },
+            width: 241,
+            height: 58,
+            image: ya0,
+            verticesRel: [
+                {x: 15, y: 53},
+                {x: 21, y: 27},
+                {x: 46, y: 9},
+                {x: 69, y: 5},
+                {x: 120, y: 29},
+                {x: 132, y: 24},
+                {x: 153, y: 39},
+                {x: 222, y: 39},
+                {x: 228, y: 58},
+            ]
+        },
+        {
+            id: 'ya1',
+            originalPosition: {
+                x: 169,
+                y: 79,
+            },
+            position: {
+                x: -5,
+                y: 335,
+            },
+            positionLandscape: {
+                x: -20,
+                y: 113,
+            },
+            positionBottom: {
+                x: -2,
+                y: 316,
+            },
+            width: 144,
+            height: 39,
+            image: ya1,
+            verticesRel: [
+                {x: 34, y: 24},
+                {x: 66, y: 7},
+                {x: 84, y: 7},
+                {x: 108, y: 16},
+                {x: 126, y: 39},
+                {x: 55, y: 39},
+            ]
+        },
+        {
+            id: 'ya2',
+            originalPosition: {
+                x: 215,
+                y: 137,
+            },
+            position: {
+                x: 238,
+                y: 47,
+            },
+            positionLandscape: {
+                x: 1036,
+                y: 84,
+            },
+            positionBottom: {
+                x: 28,
+                y: 488,
+            },
+            width: 102,
+            height: 82.5,
+            image: ya2,
+            verticesRel: [
+                {x: 0, y: 0},
+                {x: 84, y: 0},
+                {x: 83, y: 22},
+                {x: 70, y: 56},
+                {x: 53, y: 79},
+                {x: 39, y: 37},
+            ]
+        },
+        {
+            id: 'ya3',
+           originalPosition: {
+                x: 182,
+                y: 174.5,
+            },
+            position: {
+                x: 256,
+                y: 370,
+            },
+            positionLandscape: {
+                x: -10,
+                y: 435,
+            },
+            positionBottom: {
+                x: 252,
+                y: 388,
+            },
+            width: 87.5,
+            height: 61,
+            image: ya3,
+            verticesRel: [
+                {x: 0, y: 6},
+                {x: 72, y: 0},
+                {x: 86, y: 41},
+                {x: 83, y: 46},
+                {x: 8, y: 61},
+            ]
+        },
+        {
+            id: 'ya4',
+            originalPosition: {
+                x: 160.5,
+                y: 219.5,
+            },
+            position: {
+                x: 28,
+                y: 471,
+            },
+            positionLandscape: {
+                x: 150,
+                y: 265,
+            },
+            positionBottom: {
+                x: 27,
+                y: 398,
+            },
+            width: 109,
+            height: 71,
+            image: ya4,
+            verticesRel: [
+                {x: 2, y: 44},
+                {x: 30, y: 16},
+                {x: 104, y: 0},
+                {x: 63, y: 44},
+                {x: 39, y: 62},
+                {x: 24, y: 62},
+            ]
+        },
+        {
+            id: 'ya5',
+           originalPosition: {
+                x: 99,
+                y: 181,
+            },
+            position: {
+                x: 129,
+                y: 412,
+            },
+            positionLandscape: {
+                x: 890,
+                y: 495,
+            },
+            positionBottom: {
+                x: 143,
+                y: 370,
+            },
+            width: 91.5,
+            height: 85.5,
+            image: ya5,
+            verticesRel: [
+                {x: 0, y: 7},
+                {x: 83, y: 0},
+                {x: 91.5, y: 54},
+                {x: 64, y: 82},
+                {x: 23, y: 49},
+            ]
+        },
+        {
+            id: 'ya6',
+            originalPosition: {
+                x: 71,
+                y: 137,
+            },
+            position: {
+                x: 28,
+                y: 109,
+            },
+            positionLandscape: {
+                x: 1080,
+                y: 685,
+            },
+            positionBottom: {
+                x: 189,
+                y: 472,
+            },
+            width: 144,
+            height: 52.5,
+            image: ya6,
+            verticesRel: [
+                {x: 15, y: 0},
+                {x: 144, y: 0},
+                {x: 125, y: 23},
+                {x: 27, y: 50},
+                {x: 15, y: 26},
+            ]
+        },
+        {
+            id: 'ya7',
+           originalPosition: {
+                x: 88.5,
+                y: 137,
+            },
+            position: {
+                x: 38,
+                y: 21,
+            },
+            positionLandscape: {
+                x: 910,
+                y: 304,
+            },
+            positionBottom: {
+                x: 161,
+                y: 302,
+            },
+            width: 165.5,
+            height: 52.5,
+            image: ya7,
+            verticesRel: [
+                {x: 10, y: 50},
+                {x: 107, y: 23},
+                {x: 126.5, y: 0},
+                {x: 165.5, y: 37.5},
+                {x: 11, y: 51.5},
             ]
         },
     ],

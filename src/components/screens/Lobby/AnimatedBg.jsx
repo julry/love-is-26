@@ -121,8 +121,8 @@ const LandscapeOffLightsStyled = styled(OffLightsLandscape)`
     }
 `;
 
-export const AnimatedBg = ({ isGameStarted, ...props }) => {
-    const {isLandscape} = useProgress();
+export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
+    const { isLandscape } = useProgress();
     const [isLoaded, setIsLoaded] = useState(false);
 
     const initialImg = isLandscape ? frameDesktop1 : frame1;
@@ -185,7 +185,6 @@ export const AnimatedBg = ({ isGameStarted, ...props }) => {
             {...props}
             style={(isLoaded && isGameStarted) ? {} : { backgroundImage: `url(${initialImg})` }}
         >
-            {/* <Backdrop /> */}
             <Image
                 style={{
                     backgroundImage: `url(${images[state.baseIndex]})`,
@@ -228,7 +227,9 @@ export const AnimatedBg = ({ isGameStarted, ...props }) => {
                     ease: "easeInOut"
                 }}
             />
-            {isLandscape ? <LandscapeOffLightsStyled /> : <OffLightsStyled />}
+            {!isFinished && (
+                isLandscape ? <LandscapeOffLightsStyled /> : <OffLightsStyled />
+            )}
             <Content>
                 {props.children}
             </Content>

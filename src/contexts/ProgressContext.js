@@ -52,19 +52,21 @@ export function ProgressProvider(props) {
     const handleToggleAudio = () => {
         if (isMusicPlaying) {
             audioRef.current.pause();
+            localStorage.setItem('love_music_agreed', false);
             setIsMusicPlaying(false);
         } else {
+            localStorage.setItem('love_music_agreed', true);
             playMusic();
         }
     }
 
-    const registrateEmail = async ({email, isAdsAgreed}) => {
+    const registrateEmail = async ({email, isMailsAgreed}) => {
         setIsRegistered(true);
     //    try {
     //         const emailUser = await client?.current.findRecord('email', email);
     //         if (emailUser) return;
 
-    //         const record = await client?.current.createRecord({email, isAdsAgreed});
+    //         const record = await client?.current.createRecord({email, isMailsAgreed});
     //         return record; 
     //    } catch (e) {
     //         return {isError: true}
@@ -87,7 +89,8 @@ export function ProgressProvider(props) {
         isPlayed,
         handleToggleAudio,
         audioRef,
-        isMusicPlaying
+        isMusicPlaying,
+        isRegistered
     }
 
     return (

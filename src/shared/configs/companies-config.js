@@ -33,6 +33,11 @@ import bgDeskFt from '../../assets/images/ft/bgDesk.svg';
 import bgFt from '../../assets/images/ft/bgMobile.svg';
 import finalFt from '../../assets/images/ft/ftFinished.png';
 
+import yaHeart from '../../assets/images/ya/yaFieldH.png';
+import bgDeskYa from '../../assets/images/ya/bgDesk.svg';
+import bgYa from '../../assets/images/ya/bgMobile.svg';
+import finalYa from '../../assets/images/ya/yaFinished.png';
+
 
 import { piecesConfig } from './pieces-config';
 
@@ -57,8 +62,8 @@ export const companiesConfig = [
         bgPicLand: bgDeskAvito,
         bgPic: bgAvito,
         pieces: piecesConfig.avito,
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
+        finishTitle: 'улучшать собственную жизнь и жизнь людей вокруг',
+        finishText: 'В Авито она проявляется в доверии, обучении и совместной работе, из которых вырастает результат.\n\nЭтот процесс можно увидеть внутри команды Авито → актуальные стажировки',
         finalHeart: finalAvito,
     },
     {
@@ -85,8 +90,8 @@ export const companiesConfig = [
         bgPicLand: bgDeskAlfa,
         bgPic: bgAlfa,
         pieces: piecesConfig.alfa,
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
+        finishTitle: 'работать вместе и становиться сильнее',
+        finishText: 'В Альфа-Банке её создают через коллаборации, где совместная работа усиливает профессиональные навыки каждого.\n\nУвидеть возможности роста в Альфе → больше о стажировках ',
         finalHeart: finalAlfa,
     },
     {
@@ -113,8 +118,8 @@ export const companiesConfig = [
         bgPicLand: bgDeskVtb,
         bgPic: bgVtb,
         pieces: piecesConfig.vtb,
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
+        finishTitle: 'когда цифры греют сердце',
+        finishText: 'В ВТБ она живёт не только в масштабных проектах, но и в людях: стажёрах, наставниках, встречах и комьюнити, которое растёт каждый день.\n\nУвидеть, как выглядит любовь в цифрах → актуальные стажировки ',
         finalHeart: finalVtb,
     },
     {
@@ -146,8 +151,8 @@ export const companiesConfig = [
         bgPicLand: bgDeskLem,
         bgPic: bgLem,
         pieces: piecesConfig.lemana,
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
+        finishTitle: 'когда о тебе действительно заботятся',
+        finishText: 'В Лемана ПРО это доверие, обучение, поддержка коллег и комфортная адаптация с первого дня.\n\nСтать частью команды → актуальные возможности ',
         finalHeart: finalLem,
     },
     {
@@ -175,8 +180,8 @@ export const companiesConfig = [
         bgPicLand: bgDeskOtp,
         bgPic: bgOtp,
         pieces: piecesConfig.otp,
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
+        finishTitle: 'когда жизнь не ставят на паузу',
+        finishText: 'В ОТП Банке не просят выбирать между учёбой и работой — здесь можно расти и пробовать своё.\n\nУвидеть, как это устроено → больше о стажировках ',
         finalHeart: finalOtp,
     },
     {
@@ -209,28 +214,30 @@ export const companiesConfig = [
         bgPicLand: bgDeskPsb,
         bgPic: bgPsb,
         pieces: piecesConfig.psb,
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
+        finishTitle: 'чувствовать смысл в том, что ты делаешь',
+        finishText: 'В ПСБ она рождается из доверия, заботы и ощущения причастности к большим делам, результатами которых можно гордиться.\n\nКак это ощущается изнутри ПСБ → актуальные стажировки ',
         finalHeart: finalPsb,
     },
     {
         id: 'yandex',
         logo: {
             image: (
-                <svg width="100%" height="100%" viewBox="0 0 98 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="100%" height="100%" viewBox="0 0 85 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M81.2609 20.8981C82.9331 20.8981 84.1175 20.6038 85 19.9698V17.0943C84.0943 17.7056 83.0027 18.0906 81.4699 18.0906C78.8921 18.0906 77.8238 16.1434 77.8238 13.0641C77.8238 9.82638 79.1243 8.17354 81.4932 8.17354C82.8866 8.17354 84.2568 8.64902 84.9768 9.10185V6.11316C84.2104 5.70561 82.8866 5.41127 81.0751 5.41127C76.4536 5.41127 74.0615 8.64902 74.0615 13.1773C74.0847 18.1358 76.4303 20.8981 81.2609 20.8981ZM58.6639 19.5849V16.7094C57.5492 17.4566 55.6448 18.1132 53.903 18.1132C51.2555 18.1132 50.2568 16.8905 50.0943 14.4H58.8265V12.5434C58.8265 7.35845 56.4809 5.41127 52.8811 5.41127C48.4686 5.41127 46.3784 8.6943 46.3784 13.2C46.3784 18.3849 49.0027 20.8981 53.6011 20.8981C55.9003 20.8981 57.5956 20.2868 58.6639 19.5849ZM25.5232 5.68297V11.5698H20.6926V5.68297H17.0697V20.6038H20.6926V14.3773H25.5232V20.6038H29.1462V5.68297H25.5232ZM45.4727 17.7962H43.8702V5.68297H33.3265V6.9509C33.3265 10.5962 33.0943 15.3056 31.8169 17.7962H30.6557V24H34V20.6038H42.1052V24H45.4495V17.7962H45.4727ZM70.2063 20.6038H74.3169L68.5109 12.566L73.6202 5.68297H69.974L64.8648 12.566V5.68297H61.2418V20.6038H64.8648V13.2679L70.2063 20.6038ZM52.7883 8.17354C54.5765 8.17354 55.1339 9.6226 55.1339 11.5019V11.7962H50.0943C50.1872 9.41883 51.0697 8.17354 52.7883 8.17354ZM40.2473 17.7962H35.138C36.1366 15.5547 36.4153 11.4792 36.4153 8.89807V8.44524H40.2473V17.7962Z" fill="white"/>
+                    <path d="M14.0505 20.6038H10.3579V2.78491H8.70902C5.68989 2.78491 4.11066 4.25661 4.11066 6.45285C4.11066 8.94342 5.20219 10.0981 7.45492 11.5698L9.31284 12.7925L3.97131 20.6038H0L4.80738 13.6302C2.04372 11.7057 0.487705 9.82644 0.487705 6.65662C0.487705 2.69435 3.32104 0 8.68579 0H14.0273L14.0505 20.6038Z" fill="white"/>
                 </svg>
             ),
-            sizeSm: { width: 98, height: 30, top: 26 },
-            sizeLg: { width: 165, height: 51 },
+            sizeSm: { width: 85, height: 24, top: 29 },
+            sizeLg: { width: 149, height: 42 },
         },
-        heartSize: { width: 364, height: 350 },
-        heartPic: psbHeart,
-        // bgPicLand: bgDeskPsb,
-        // bgPic: bgPsb,
-        pieces: [],
-        finishTitle: 'заголовок',
-        finishText: 'Текст с СТА компании',
-        // finalHeart: finalPsb,
+        heartSize: { width: 383, height: 374 },
+        heartPic: yaHeart,
+        bgPicLand: bgDeskYa,
+        bgPic: bgYa,
+        pieces: piecesConfig.ya,
+        finishTitle: 'не бояться сделать первый шаг в IT',
+        finishText: 'В Яндексе она живёт в среде, где есть доступ к реальным проектам, поддержка менторов и пространство, где можно пробовать и ошибаться.\n\nКак это ощущается изнутри → актуальные возможности ',
+        finalHeart: finalYa,
     },
     {
         id: 'ft',

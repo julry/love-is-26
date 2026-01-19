@@ -81,16 +81,37 @@ const EndModal = styled(motion.div)`
 `;
 
 const EndTextWrapper = styled.div`
-    padding: var(--spacing_x6);
+    padding: var(--spacing_x6) var(--spacing_x4);
     text-align: center;
+    white-space: pre-line;
+    background: rgba(59, 61, 90, 0.2);
+
+    ${media.desktop`
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (max-height: 900px) {
+            padding: 30px 20px;
+        }
+    `}
 `;
 
 const EndText = styled.p`
-    margin: var(--spacing_x6) 0;
+    line-height: 110%;
+    margin: var(--spacing_x4) 0;
     font-size: var(--font_md);
 
     ${media.desktop`
-        margin: 40px 0;
+        margin: 20px 0;
+        font-size: 23px;
+        max-width: 650px;
+
+        @media screen and (max-height: 900px) {
+            font-size: 20px;
+            max-width: 600px;
+        }
     `}
 `;
 
@@ -107,12 +128,25 @@ const EndContent = styled(motion.div)`
     `}
 
     ${media.desktop`
+        max-width: ${({ $ratio }) => $ratio * 810}px;
         bottom: ${({ $ratio }) => $ratio * 60}px;
+
+        @media screen and (max-height: 900px) {
+            bottom: 40px;
+        }
     `}
 `;
 
 const Title = styled.h3`
-    font-size: calc( 40 / 14 * var(--font_md));
+    font-size: calc(20 / 14 * var(--font_md));
+
+    ${media.desktop`
+        font-size: 40px;
+
+        @media screen and (max-height: 900px) {
+            font-size: 36px;
+        }
+    `}
 `;
 
 const ButtonStyled = styled(Button)`
@@ -181,19 +215,16 @@ const LandscapeInfoContent = styled.div`
     `}
 `;
 
-const SHINE_K_HEIGHT = 1.67;
-const SHINE_K_WIDTH = 1.63;
-
 export const GameScreen = ({ companyId }) => {
     const ratio = useSizeRatio();
     const company = companiesConfig.find(({ id }) => id === companyId) ?? {};
 
-    const { heartSize, bgPic, bgPicLand, logo, finalHeart } = company;
+    const { heartSize, bgPic, bgPicLand, logo, finalHeart, finishTitle, finishText } = company;
 
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const [dpr, setDpr] = useState(0);
-    const [isEnd, setIsEnd] = useState(false);
+    const [isEnd, setIsEnd] = useState(true);
     const [isRules, setIsRules] = useState(false);
     const [heartPositionY, setHeartPositionY] = useState(0);
     const [heartHeight, setHeartHeight] = useState(heartSize.height);
@@ -203,8 +234,8 @@ export const GameScreen = ({ companyId }) => {
     const $info = useRef();
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
 
-    // const isFirst = useMemo(() => true, [openedCompanies]);
-    const isFirst = useMemo(() => !openedCompanies.length, []);
+    const isFirst = useMemo(() => false, [openedCompanies]);
+    // const isFirst = useMemo(() => !openedCompanies.length, []);
 
     const handleBack = () => {
         next(SCREEN_NAMES.LOBBY);
@@ -231,7 +262,7 @@ export const GameScreen = ({ companyId }) => {
 
         const infoRect = $info.current.getBoundingClientRect();
 
-        setInfoHeight((infoRect.height - heartPositionY) / 2);
+        setInfoHeight((infoRect.height - heartPositionY) / (isFirst ? 2.4 : 1.8));
         setHeartPositionY(isWide || !isFirst ? 0 : (headerHeight / 2) * koef);
         setWidth(rect.width);
         setHeight(rect.height);
@@ -305,6 +336,7 @@ export const GameScreen = ({ companyId }) => {
             <AnimatePresence>
                 {isEnd && (
                     <EndModal 
+                        key="end-modal"
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1, y: -infoHeight }}
                         transition={{
@@ -339,10 +371,11 @@ export const GameScreen = ({ companyId }) => {
                     </EndModal>
                 )}
                 <EndContent
+                    key="end-content"
                     ref={$info}
                     $ratio={ratio}
                     $heartHeight={heartSize.height}
-                    initial={{ x: '-50%', y: '50vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {}}
+                    initial={{ x: '-50%', y: '100vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {y: $info?.current?.getBoundingClientRect()?.height}}
                     transition={{
                         y: {
                             delay: 1.4,
@@ -352,9 +385,9 @@ export const GameScreen = ({ companyId }) => {
                     }}>
                     <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
                         <EndTextWrapper>
-                            <Title>заголовок</Title>
+                            <Title>Любовь — это {finishTitle}</Title>
                             <EndText>
-                                Текст с СТА компании
+                                {finishText} <a>тут</a>.
                             </EndText>
                             <ButtonStyled onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
                         </EndTextWrapper>
