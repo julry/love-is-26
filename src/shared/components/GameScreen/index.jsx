@@ -224,7 +224,7 @@ export const GameScreen = ({ companyId }) => {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const [dpr, setDpr] = useState(0);
-    const [isEnd, setIsEnd] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
     const [isRules, setIsRules] = useState(false);
     const [heartPositionY, setHeartPositionY] = useState(0);
     const [heartHeight, setHeartHeight] = useState(heartSize.height);
