@@ -52,10 +52,8 @@ export function ProgressProvider(props) {
     const handleToggleAudio = () => {
         if (isMusicPlaying) {
             audioRef.current.pause();
-            localStorage.setItem('love_music_agreed', false);
             setIsMusicPlaying(false);
         } else {
-            localStorage.setItem('love_music_agreed', true);
             playMusic();
         }
     }

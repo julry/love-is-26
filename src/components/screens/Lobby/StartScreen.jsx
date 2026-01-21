@@ -52,8 +52,6 @@ export const StartScreen = ({ onClose }) => {
 
     const handleStart = () => {
         setIsRules(true);
-        const isAgreedMusic = localStorage.getItem('love_music_agreed');
-        if (!isAgreedMusic) return;
         handleToggleAudio();
     }
 

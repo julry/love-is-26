@@ -1,22 +1,10 @@
 {
   "files": {
     "main.css": "./static/css/main.67dbe571.css",
-    "main.js": "./static/js/main.84aa5ce9.js",
+    "main.js": "./static/js/main.496da117.js",
     "static/media/loveis.wav": "./static/media/loveis.5cde0843e08d4d965d74.wav",
     "static/media/loveis.mp3": "./static/media/loveis.62028c103df8102c8a6f.mp3",
     "static/media/loveis.ogg": "./static/media/loveis.ab7f896b84f27e906f13.ogg",
-    "static/media/bgDesktop4.png": "./static/media/bgDesktop4.61d6347a603594014f72.png",
-    "static/media/bgDesktop5.png": "./static/media/bgDesktop5.d65c251eb3eeacac7016.png",
-    "static/media/bgDesktop11.png": "./static/media/bgDesktop11.01cd454799ee8898fc81.png",
-    "static/media/bgDesktop8.png": "./static/media/bgDesktop8.33fe9d0457ee3181350d.png",
-    "static/media/bgDesktop9.png": "./static/media/bgDesktop9.e2fc6e58eea8efb5bb01.png",
-    "static/media/bgDesktop7.png": "./static/media/bgDesktop7.ac838df386e562dae6a5.png",
-    "static/media/bgDesktop2.png": "./static/media/bgDesktop2.d6640ce2e698274cdaa6.png",
-    "static/media/bgDesktop10.png": "./static/media/bgDesktop10.4a06773e638001e053ac.png",
-    "static/media/bgDesktop12.png": "./static/media/bgDesktop12.76df5a1ff6dab97fb73d.png",
-    "static/media/bgDesktop1.png": "./static/media/bgDesktop1.2fc5378362523681762f.png",
-    "static/media/bgDesktop6.png": "./static/media/bgDesktop6.da1f21efe8b33f6c422a.png",
-    "static/media/bgDesktop3.png": "./static/media/bgDesktop3.fe2d733f5575921e953d.png",
     "static/media/treeDesktop3.png": "./static/media/treeDesktop3.453969fc3c89c1159db7.png",
     "static/media/treeDesktop5.png": "./static/media/treeDesktop5.1d2dbf93592079407c84.png",
     "static/media/treeDesktop7.png": "./static/media/treeDesktop7.2f34158d37820191b793.png",
@@ -29,6 +17,18 @@
     "static/media/treeDesktop2.png": "./static/media/treeDesktop2.7d8ddf2f96c25ce327d7.png",
     "static/media/treeDesktop9.png": "./static/media/treeDesktop9.09e4ce3248d837af26fb.png",
     "static/media/treeDesktop1.png": "./static/media/treeDesktop1.a4a7a7fc978c6e489fa3.png",
+    "static/media/bgDesktop9.png": "./static/media/bgDesktop9.257dca731120028954e1.png",
+    "static/media/bgDesktop5.png": "./static/media/bgDesktop5.3cee571fa3d15cc36126.png",
+    "static/media/bgDesktop2.png": "./static/media/bgDesktop2.30f0156ac975096ee97c.png",
+    "static/media/bgDesktop4.png": "./static/media/bgDesktop4.b555390b85fc5f18292f.png",
+    "static/media/bgDesktop12.png": "./static/media/bgDesktop12.091bc1c2845ec37a6e5d.png",
+    "static/media/bgDesktop6.png": "./static/media/bgDesktop6.ed9c4bc6f101b1d0d351.png",
+    "static/media/bgDesktop8.png": "./static/media/bgDesktop8.43bcc6acb9a62344a78d.png",
+    "static/media/bgDesktop10.png": "./static/media/bgDesktop10.2d1723845ec21b170631.png",
+    "static/media/bgDesktop3.png": "./static/media/bgDesktop3.a5d904eb62c72da67441.png",
+    "static/media/bgDesktop7.png": "./static/media/bgDesktop7.08838fe68f318873e086.png",
+    "static/media/bgDesktop11.png": "./static/media/bgDesktop11.c9a9f66c8e79034bb691.png",
+    "static/media/bgDesktop1.png": "./static/media/bgDesktop1.e08dccc16c8702656ac9.png",
     "static/media/HelveticaNeue-Roman.otf": "./static/media/HelveticaNeue-Roman.ddb209473d7df560da50.otf",
     "static/media/vtbFieldH.png": "./static/media/vtbFieldH.eb06cd23211f328ec34a.png",
     "static/media/lemFieldH.png": "./static/media/lemFieldH.5018290fe28c18609257.png",
@@ -138,10 +138,10 @@
     "static/media/bgDesk.svg": "./static/media/bgDesk.2e90c86fe4394c2d3c8d828af9891629.svg",
     "index.html": "./index.html",
     "main.67dbe571.css.map": "./static/css/main.67dbe571.css.map",
-    "main.84aa5ce9.js.map": "./static/js/main.84aa5ce9.js.map"
+    "main.496da117.js.map": "./static/js/main.496da117.js.map"
   },
   "entrypoints": [
     "static/css/main.67dbe571.css",
-    "static/js/main.84aa5ce9.js"
+    "static/js/main.496da117.js"
   ]
 }

@@ -88,6 +88,10 @@ const CookieWrapper = styled.div`
     z-index: 40;
     width: 100%;
     max-width: ${({ $ratio }) => $ratio * 335}px;
+
+    ${media.tablet`
+        max-width: ${({ $ratio }) => $ratio * 455}px;
+    `};
 `;
 
 const CookieContent = styled.div`
