@@ -12,12 +12,14 @@ const ProgressContext = createContext(INITIAL_STATE);
 
 export function ProgressProvider(props) {
     const {children} = props;
+    const isRegisratedStorage = Boolean(localStorage.getItem('isRegistered'));
+    const openedCompaniesStorage = localStorage.getItem('doneCompanies') ? JSON.parse(localStorage.getItem('doneCompanies')) : [];
     const [isLandscape, setIsLandscape] = useState(false);
     const [currentScreen, setCurrentScreen] = useState(getUrlParam('screen') || INITIAL_STATE.screen);
-    const [openedCompanies, setOpenedCompanies] = useState([]);
+    const [openedCompanies, setOpenedCompanies] = useState(openedCompaniesStorage);
     const [isFinished, setIsFinished] = useState(false);
     const [isPlayed, setIsPlayed] = useState(false);
-    const [isRegistered, setIsRegistered] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(isRegisratedStorage);
     const [isMusicPlaying, setIsMusicPlaying] = useState(false);
     const screen = screens[currentScreen];
 
@@ -43,6 +45,7 @@ export function ProgressProvider(props) {
     const playMusic = () => {
         audioRef.current.play().then(() => {
             setIsMusicPlaying(true);
+            localStorage.setItem('music', 'on');
         })
         .catch(error => {
             console.log('Ошибка воспроизведения:', error);
@@ -53,6 +56,7 @@ export function ProgressProvider(props) {
         if (isMusicPlaying) {
             audioRef.current.pause();
             setIsMusicPlaying(false);
+            localStorage.setItem('music', 'off');
         } else {
             playMusic();
         }
@@ -60,6 +64,7 @@ export function ProgressProvider(props) {
 
     const registrateEmail = async ({email, isMailsAgreed}) => {
         setIsRegistered(true);
+        // localStorage.setItem('isRegistered', true);
     //    try {
     //         const emailUser = await client?.current.findRecord('email', email);
     //         if (emailUser) return;

@@ -152,7 +152,7 @@ export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
     useEffect(() => {
         Promise.allSettled(
             [...images, ...treeImages].map((src) => preloadImage(src))
-        ).finally(() => {
+        ).then((values) => {
             setIsLoaded(true);
         });
     }, []);
@@ -161,18 +161,21 @@ export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
         if (!(isLoaded && isGameStarted)) return;
 
         const transition = () => {
-            setState(prev => ({ ...prev, showOverlay: true }));
-
             timeoutRef.current = setTimeout(() => {
                 setState(prev => ({
+                    ...prev,
                     baseIndex: prev.overlayIndex,
-                    overlayIndex: (prev.overlayIndex + 1) % images.length,
-                    showOverlay: false,
                 }));
             }, 500);
+            timeoutRef.current = setTimeout(() => {
+                setState(prev => ({
+                    ...prev,
+                    overlayIndex: (prev.overlayIndex + 1) % images.length,
+                }));
+            }, 600);
         };
 
-        intervalRef.current = setInterval(transition, 800);
+        intervalRef.current = setInterval(transition, 900);
 
         return () => {
             if (intervalRef.current) clearInterval(intervalRef.current);
@@ -190,16 +193,12 @@ export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
                     backgroundImage: `url(${images[state.baseIndex]})`,
                 }}
                 key={`base-${state.baseIndex}`}
-                initial={false}
-                animate={{ opacity: 1 }}
             />
             <TreeImage
                 style={{
                     backgroundImage: `url(${treeImages[state.baseIndex]})`,
                 }}
                 key={`base-tree-${state.baseIndex}`}
-                initial={false}
-                animate={{ opacity: 1 }}
             />
             <NextImage
                 style={{
@@ -210,7 +209,7 @@ export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                    duration: 0.5,
+                    duration: 0.4,
                     ease: "easeInOut"
                 }}
             />
@@ -223,7 +222,7 @@ export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                    duration: 0.5,
+                    duration: 0.4,
                     ease: "easeInOut"
                 }}
             />

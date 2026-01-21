@@ -1796,7 +1796,7 @@ export const piecesConfig = {
         {
             id: 'ya1',
             originalPosition: {
-                x: 169,
+                x: 168,
                 y: 79,
             },
             position: {

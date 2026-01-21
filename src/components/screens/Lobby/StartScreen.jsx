@@ -52,6 +52,7 @@ export const StartScreen = ({ onClose }) => {
 
     const handleStart = () => {
         setIsRules(true);
+        if (localStorage.getItem('music') === 'off') return;
         handleToggleAudio();
     }
 

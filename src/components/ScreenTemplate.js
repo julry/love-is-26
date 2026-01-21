@@ -90,7 +90,7 @@ const CookieWrapper = styled.div`
     max-width: ${({ $ratio }) => $ratio * 335}px;
 
     ${media.tablet`
-        max-width: ${({ $ratio }) => $ratio * 455}px;
+        max-width: ${({ $ratio }) => $ratio * 495}px;
     `};
 `;
 

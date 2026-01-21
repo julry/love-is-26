@@ -221,10 +221,14 @@ export const GameScreen = ({ companyId }) => {
 
     const { heartSize, bgPic, bgPicLand, logo, finalHeart, finishTitle, finishText } = company;
 
+    const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
+    const isAlreadyFinished = useMemo(() => openedCompanies.includes(companyId), []);
+
+
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const [dpr, setDpr] = useState(0);
-    const [isEnd, setIsEnd] = useState(false);
+    const [isEnd, setIsEnd] = useState(isAlreadyFinished);
     const [isRules, setIsRules] = useState(false);
     const [heartPositionY, setHeartPositionY] = useState(0);
     const [heartHeight, setHeartHeight] = useState(heartSize.height);
@@ -232,7 +236,7 @@ export const GameScreen = ({ companyId }) => {
     const [infoHeight, setInfoHeight] = useState(0);
 
     const $info = useRef();
-    const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
+
 
     const isFirst = useMemo(() => !openedCompanies.length, []);
 
@@ -270,6 +274,8 @@ export const GameScreen = ({ companyId }) => {
 
 
     const stopGame = useCallback(() => {
+        const storageCompanies = openedCompanies?.includes?.(companyId) ? openedCompanies : [...openedCompanies, companyId];
+        // localStorage.setItem('doneCompanies', JSON.stringify(storageCompanies));
         setOpenedCompanies(prev => prev?.includes?.(companyId) ? prev : [...prev, companyId]);
         setIsEnd(true);
     }, []);
@@ -330,7 +336,7 @@ export const GameScreen = ({ companyId }) => {
             <CanvasWrapper 
                 ref={gameContainerRef} 
                 animate={isEnd ? { opacity: 0 } : {}} 
-                transition={{ duration: 1, delay: 0.5 }} 
+                transition={{ duration: isAlreadyFinished ? 0 : 1, delay: isAlreadyFinished ? 0 : 0.5 }} 
             />
             <AnimatePresence>
                 {isEnd && (
@@ -340,7 +346,7 @@ export const GameScreen = ({ companyId }) => {
                         animate={{ opacity: 1, y: -infoHeight }}
                         transition={{
                             y: {
-                                delay: 1.4,
+                                delay: isAlreadyFinished ? 0 : 1.4,
                                 duration: 0.4
                             }, opacity: { duration: 0.6, delay: 0.2 }
                         }}
@@ -377,7 +383,7 @@ export const GameScreen = ({ companyId }) => {
                     initial={{ x: '-50%', y: '100vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {y: $info?.current?.getBoundingClientRect()?.height}}
                     transition={{
                         y: {
-                            delay: 1.4,
+                            delay: isAlreadyFinished ? 0 : 1.4,
                             duration: 0.4,
                             origin: '0 100%',
                         },
