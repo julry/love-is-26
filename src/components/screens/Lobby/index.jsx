@@ -16,6 +16,7 @@ import { companiesLength } from '../../../shared/configs/companies-config';
 import { SCREEN_NAMES } from '../../../constants/screens';
 import { GameEnd } from './GameEnd';
 import { Form } from './Form';
+import { EmailSendModal } from './EmailSendModal';
 
 const Header = styled.div`
     display: flex;
@@ -111,6 +112,7 @@ export const Lobby = () => {
     const [isShownStartScreen, setIsShownStartScreen] = useState(!isPlayed);
     const [isShownRules, setIsShownRules] = useState(false);
     const [isFormScreen, setIsFormScreen] = useState(false);
+    const [isEmailSendScreen, setIsEmailSendScreen] = useState(false);
     const isFinished = openedCompanies.length === companiesLength;
     const [isEndPart, setIsEndPart] = useState(isFinished && !isRegistered);
 
@@ -128,9 +130,14 @@ export const Lobby = () => {
         next(id);
     }
 
-    const handleCloseForm = () => {
+    const handleOpenForm = () => {
+        setIsFormScreen(true);
         setIsEndPart(false);
+    }
+
+    const handleCloseForm = () => {
         setIsFormScreen(false);
+        setIsEmailSendScreen(true);
     };
 
     return (
@@ -185,8 +192,9 @@ export const Lobby = () => {
                     </GameInfo>
                 </GlassBlock>
             </GameInfoWrapper>
-            {isEndPart && <GameEnd onClick={() => setIsFormScreen(true)} />}
+            {isEndPart && <GameEnd onClick={handleOpenForm} />}
             {isFormScreen && <Form onClick={handleCloseForm} />}
+            {isEmailSendScreen && <EmailSendModal onClose={() => setIsEmailSendScreen(false)} />}
             <AnimatePresence>
                 {isShownStartScreen && (<StartScreen onClose={handleCloseStartScreen} />)}
                 {isShownRules && (<Rules onClose={handleCloseRules} />)}
