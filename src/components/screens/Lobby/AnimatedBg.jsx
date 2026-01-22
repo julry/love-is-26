@@ -152,7 +152,7 @@ export const AnimatedBg = ({ isGameStarted, isFinished, ...props }) => {
     useEffect(() => {
         Promise.allSettled(
             [...images, ...treeImages].map((src) => preloadImage(src))
-        ).then((values) => {
+        ).then(() => {
             setIsLoaded(true);
         });
     }, []);

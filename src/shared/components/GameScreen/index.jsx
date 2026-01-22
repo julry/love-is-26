@@ -62,6 +62,7 @@ const EndImageWrapper = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     flex: 1;
     max-height: ${({ $height }) => $height ? $height + 'px' : 'unset'};
     z-index: 2;
@@ -70,6 +71,10 @@ const EndImageWrapper = styled(motion.div)`
     ${media.tablet`
         max-height: unset;
     `}
+
+    & img {
+        object-fit: contain;
+    }
 `;
 
 const EndModal = styled(motion.div)`
@@ -352,26 +357,7 @@ export const GameScreen = ({ companyId }) => {
                         }}
                     >
                         <EndImageWrapper $height={isFirst ? height : undefined} $heartPositionY={heartPositionY}>
-                            <svg width={heartWidth} height={heartHeight} viewBox={`0 0 ${heartSize.width} ${heartSize.height}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g filter="url(#filter0_d_541_5920)">
-                                    <rect x="19%" y="19%" width={heartSize.width * 0.62} height={heartSize.height * 0.62} fill="url(#pattern0_523_4673)" shape-rendering="crispEdges" />
-                                </g>
-                                <defs>
-                                    <filter id="filter0_d_541_5920" x="0" y="0" width="367" height="352" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                        <feOffset />
-                                        <feGaussianBlur stdDeviation="35" />
-                                        <feComposite in2="hardAlpha" operator="out" />
-                                        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0" />
-                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_541_5920" />
-                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_541_5920" result="shape" />
-                                    </filter>
-                                    <pattern id="pattern0_523_4673" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                        <image x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet" href={finalHeart} />
-                                    </pattern>
-                                </defs>
-                            </svg>
+                            <img src={finalHeart} width={heartWidth + 'px'} height={heartHeight + 'px'} />
                         </EndImageWrapper>
                     </EndModal>
                 )}

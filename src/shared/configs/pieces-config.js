@@ -1281,7 +1281,7 @@ export const piecesConfig = {
             id: 'psb0',
             originalPosition: {
                 x: 75,
-                y: 68,
+                y: 76,
             },
             position: {
                 x: 21,
@@ -1313,7 +1313,7 @@ export const piecesConfig = {
             id: 'psb1',
             originalPosition: {
                 x: 140,
-                y: 68,
+                y: 76,
             },
             position: {
                 x: 37,
@@ -1342,7 +1342,7 @@ export const piecesConfig = {
             id: 'psb2',
             originalPosition: {
                 x: 204,
-                y: 68,
+                y: 76,
             },
             position: {
                 x: 156,
@@ -1372,7 +1372,7 @@ export const piecesConfig = {
             id: 'psb3',
            originalPosition: {
                 x: 187.5,
-                y: 68,
+                y: 76,
             },
             position: {
                 x: 226,
@@ -1404,7 +1404,7 @@ export const piecesConfig = {
             id: 'psb4',
             originalPosition: {
                 x: 115.5,
-                y: 196,
+                y: 204,
             },
             position: {
                 x: 214,
@@ -1434,7 +1434,7 @@ export const piecesConfig = {
             id: 'psb5',
            originalPosition: {
                 x: 78,
-                y: 181.5,
+                y: 189.5,
             },
             position: {
                 x: 104,
@@ -1464,7 +1464,7 @@ export const piecesConfig = {
             id: 'psb6',
            originalPosition: {
                 x: 124,
-                y: 135,
+                y: 143,
             },
             position: {
                 x: 37,
@@ -1494,7 +1494,7 @@ export const piecesConfig = {
             id: 'psb7',
            originalPosition: {
                 x: 68,
-                y: 103.5,
+                y: 111.5,
             },
             position: {
                 x: 235,
@@ -1763,8 +1763,8 @@ export const piecesConfig = {
         {
             id: 'ya0',
             originalPosition: {
-                x: 71,
-                y: 79,
+                x: 64,
+                y: 80,
             },
             position: {
                 x: 103,
@@ -1796,8 +1796,8 @@ export const piecesConfig = {
         {
             id: 'ya1',
             originalPosition: {
-                x: 168,
-                y: 79,
+                x: 161,
+                y: 80,
             },
             position: {
                 x: -5,
@@ -1826,8 +1826,8 @@ export const piecesConfig = {
         {
             id: 'ya2',
             originalPosition: {
-                x: 215,
-                y: 137,
+                x: 208,
+                y: 138,
             },
             position: {
                 x: 238,
@@ -1856,8 +1856,8 @@ export const piecesConfig = {
         {
             id: 'ya3',
            originalPosition: {
-                x: 182,
-                y: 174.5,
+                x: 175,
+                y: 175.5,
             },
             position: {
                 x: 256,
@@ -1885,8 +1885,8 @@ export const piecesConfig = {
         {
             id: 'ya4',
             originalPosition: {
-                x: 160.5,
-                y: 219.5,
+                x: 153.5,
+                y: 220.5,
             },
             position: {
                 x: 28,
@@ -1915,8 +1915,8 @@ export const piecesConfig = {
         {
             id: 'ya5',
            originalPosition: {
-                x: 99,
-                y: 181,
+                x: 92,
+                y: 182,
             },
             position: {
                 x: 129,
@@ -1944,8 +1944,8 @@ export const piecesConfig = {
         {
             id: 'ya6',
             originalPosition: {
-                x: 71,
-                y: 137,
+                x: 64,
+                y: 138,
             },
             position: {
                 x: 28,
@@ -1973,8 +1973,8 @@ export const piecesConfig = {
         {
             id: 'ya7',
            originalPosition: {
-                x: 88.5,
-                y: 137,
+                x: 81.5,
+                y: 138,
             },
             position: {
                 x: 38,

@@ -340,7 +340,9 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
 
                             if (!puzzImage) continue;
 
-                            // ctx.drawImage(puzzImage, puzzle.originalPosition.x, puzzle.originalPosition.y, puzzle.width, puzzle.height)
+                            // const originalX = (puzzle.originalPosition.x + (canvasWidth - heartWidth) / 2);
+                            // const originalY = puzzle.originalPosition.y + heartPositionY;
+                            // ctx.drawImage(puzzImage, originalX, originalY, puzzle.width, puzzle.height)
                             ctx.drawImage(puzzImage, puzzle.position.x, puzzle.position.y, puzzle.width, puzzle.height)
                         }
 
