@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { piecesConfig } from "../../configs/pieces-config";
 import { Button } from '../Button';
 import { TABLET_WIDTH } from '../../../constants';
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useAnimate } from 'framer-motion'
 import { GlassBlock } from "../GlassBlock";
 import { media } from '../../../styles/mixins';
 import { useSizeRatio } from "../../../contexts/SizeRatioContext";
@@ -86,7 +86,7 @@ const EndModal = styled(motion.div)`
 `;
 
 const EndTextWrapper = styled.div`
-    padding: var(--spacing_x6) var(--spacing_x4);
+    padding: var(--spacing_x6) ${({$padding}) => $padding ?? 'calc(var(--spacing_x6) * 1.4)'};
     text-align: center;
     white-space: pre-line;
     background: rgba(59, 61, 90, 0.2);
@@ -118,6 +118,11 @@ const EndText = styled.p`
             max-width: 600px;
         }
     `}
+
+    & a {
+        border-bottom: 1px solid #FFF6EF;
+        padding-bottom: 1px;
+    }
 `;
 
 const EndContent = styled(motion.div)`
@@ -125,15 +130,15 @@ const EndContent = styled(motion.div)`
     left: 50%;
     width: 100%;
     bottom: ${({ $ratio }) => $ratio * 40}px;
-    max-width: ${({ $ratio }) => $ratio * 290}px;
+    max-width: ${({ $ratio }) => $ratio * 335}px;
     transform-origin: 0 100%;
 
     ${media.tablet`
-        max-width: ${({ $ratio }) => $ratio * 490}px;
+        max-width: ${({ $ratio }) => $ratio * 590}px;
     `}
 
     ${media.desktop`
-        max-width: ${({ $ratio }) => $ratio * 810}px;
+        max-width: ${({ $ratio }) => $ratio * 824}px;
         bottom: ${({ $ratio }) => $ratio * 60}px;
 
         @media screen and (max-height: 900px) {
@@ -144,6 +149,8 @@ const EndContent = styled(motion.div)`
 
 const Title = styled.h3`
     font-size: calc(20 / 14 * var(--font_md));
+    max-width: ${({$maxTitleWidth}) => $maxTitleWidth ? $maxTitleWidth + 'px' : 'unset'};
+    margin: 0 auto;
 
     ${media.desktop`
         font-size: 40px;
@@ -224,11 +231,13 @@ export const GameScreen = ({ companyId }) => {
     const ratio = useSizeRatio();
     const company = companiesConfig.find(({ id }) => id === companyId) ?? {};
 
-    const { heartSize, bgPic, bgPicLand, logo, finalHeart, finishTitle, finishText } = company;
+    const { 
+        heartSize, bgPic, bgPicLand, logo, finalHeart, 
+        finishTitle, finishText, paddingText, maxTitleWidth, additionalLove
+    } = company;
 
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
     const isAlreadyFinished = useMemo(() => openedCompanies.includes(companyId), []);
-
 
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
@@ -270,7 +279,7 @@ export const GameScreen = ({ companyId }) => {
 
         const infoRect = $info.current.getBoundingClientRect();
 
-        setInfoHeight((infoRect.height - heartPositionY) / (isFirst ? 2.4 : 1.8));
+        setInfoHeight((infoRect.height - heartPositionY) / (isFirst ? 2.7 : 3.1));
         setHeartPositionY(isWide || !isFirst ? 0 : (headerHeight / 2) * koef);
         setWidth(rect.width);
         setHeight(rect.height);
@@ -366,19 +375,18 @@ export const GameScreen = ({ companyId }) => {
                     ref={$info}
                     $ratio={ratio}
                     $heartHeight={heartSize.height}
-                    initial={{ x: '-50%', y: '100vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {y: $info?.current?.getBoundingClientRect()?.height}}
+                    initial={{ x: '-50%', y: '100vh', opacity: 0 }} animate={isEnd ? { y: 0, opacity: 1 } : {}}
                     transition={{
                         y: {
                             delay: isAlreadyFinished ? 0 : 1.4,
                             duration: 0.4,
-                            origin: '0 100%',
                         },
                     }}>
                     <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
-                        <EndTextWrapper>
-                            <Title>Любовь — это {finishTitle}</Title>
+                        <EndTextWrapper $padding={paddingText}>
+                            <Title $maxTitleWidth={maxTitleWidth}>Любовь{additionalLove ? ` ${additionalLove}`: ''} — это {finishTitle}</Title>
                             <EndText>
-                                {finishText} <a>тут</a>.
+                                {finishText}<a>тут</a>.
                             </EndText>
                             <ButtonStyled onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
                         </EndTextWrapper>

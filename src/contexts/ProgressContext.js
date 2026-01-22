@@ -17,7 +17,7 @@ export function ProgressProvider(props) {
     const [isLandscape, setIsLandscape] = useState(false);
     const [currentScreen, setCurrentScreen] = useState(getUrlParam('screen') || INITIAL_STATE.screen);
     const [openedCompanies, setOpenedCompanies] = useState(openedCompaniesStorage);
-    const [isFinished, setIsFinished] = useState(false);
+    const [isPrizesShown, setIsPrizesShown] = useState(false);
     const [isPlayed, setIsPlayed] = useState(false);
     const [isRegistered, setIsRegistered] = useState(isRegisratedStorage);
     const [isMusicPlaying, setIsMusicPlaying] = useState(false);
