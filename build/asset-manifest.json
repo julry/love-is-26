@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.67dbe571.css",
-    "main.js": "./static/js/main.c62b5e69.js",
+    "main.css": "./static/css/main.f1f22f09.css",
+    "main.js": "./static/js/main.8546789a.js",
     "static/media/loveis.wav": "./static/media/loveis.5cde0843e08d4d965d74.wav",
     "static/media/loveis.mp3": "./static/media/loveis.62028c103df8102c8a6f.mp3",
     "static/media/loveis.ogg": "./static/media/loveis.ab7f896b84f27e906f13.ogg",
@@ -33,9 +33,8 @@
     "static/media/vtbFieldH.png": "./static/media/vtbFieldH.eb06cd23211f328ec34a.png",
     "static/media/lemFieldH.png": "./static/media/lemFieldH.5018290fe28c18609257.png",
     "static/media/otpFieldH.png": "./static/media/otpFieldH.b5adbe417be815fec2fa.png",
-    "static/media/yaFieldH.png": "./static/media/yaFieldH.d19ed3e4c1ddad2d0767.png",
+    "static/media/yaFieldH.png": "./static/media/yaFieldH.933468e06e2dfdba77ab.png",
     "static/media/bgMobile8.png": "./static/media/bgMobile8.18306b4a3a31d0316333.png",
-    "static/media/psbFieldH.png": "./static/media/psbFieldH.93078ff24758bcd0a40d.png",
     "static/media/bgMobile4.png": "./static/media/bgMobile4.0f520953ef20f76753f9.png",
     "static/media/bgMobile11.png": "./static/media/bgMobile11.64a46aea4dc6e6647f8e.png",
     "static/media/bgMobile3.png": "./static/media/bgMobile3.d834a711623f381bc956.png",
@@ -44,21 +43,23 @@
     "static/media/bgMobile5.png": "./static/media/bgMobile5.d0f53982c1c793dfbf97.png",
     "static/media/bgMobile6.png": "./static/media/bgMobile6.ba9a22975bf3c117018c.png",
     "static/media/bgMobile1.png": "./static/media/bgMobile1.70c4f4cd56c0326e8e9c.png",
+    "static/media/psbFieldH.png": "./static/media/psbFieldH.6b8cdde308eaab2ed8f9.png",
     "static/media/bgMobile12.png": "./static/media/bgMobile12.bcc826f9ca91d6321493.png",
     "static/media/bgMobile2.png": "./static/media/bgMobile2.23b72f7e2b3ec8145283.png",
     "static/media/bgMobile10.png": "./static/media/bgMobile10.c263e3f3fc712605c540.png",
     "static/media/ftFieldH.png": "./static/media/ftFieldH.283c408a56b40bc97197.png",
     "static/media/avitoFieldH.png": "./static/media/avitoFieldH.dd4962fd751ae26715d1.png",
+    "static/media/lemFinished.png": "./static/media/lemFinished.f9a23366edfa4ea72d55.png",
     "static/media/HelveticaNeue-Light.otf": "./static/media/HelveticaNeue-Light.a7c3c98319c1341d5aa5.otf",
+    "static/media/HelveticaNeue-Medium.otf": "./static/media/HelveticaNeue-Medium.38884ffafe8888205009.otf",
+    "static/media/alfaFinished.png": "./static/media/alfaFinished.d23178c04dd21dfc97dc.png",
     "static/media/alfaFieldH.png": "./static/media/alfaFieldH.e575173754f771e1938f.png",
-    "static/media/lemFinished.png": "./static/media/lemFinished.a170b1e405ee59e42296.png",
-    "static/media/alfaFinished.png": "./static/media/alfaFinished.7035d87662c2368be5e9.png",
-    "static/media/vtbFinished.png": "./static/media/vtbFinished.4a8604c6ffa67d9ea379.png",
-    "static/media/avitoFishished.png": "./static/media/avitoFishished.77ca65475c7d4d39aa38.png",
-    "static/media/psbFinished.png": "./static/media/psbFinished.a5e920c7fa5d90cc53bb.png",
-    "static/media/otpFinished.png": "./static/media/otpFinished.83255288f23cf68598e5.png",
-    "static/media/ftFinished.png": "./static/media/ftFinished.42b524d7dc9c62407b9b.png",
-    "static/media/yaFinished.png": "./static/media/yaFinished.5de4cacdaef4e4d2ab77.png",
+    "static/media/vtbFinished.png": "./static/media/vtbFinished.7cf633f565bf6c6c98ac.png",
+    "static/media/yaFinished.png": "./static/media/yaFinished.916bae0bb1fd3af51a5b.png",
+    "static/media/otpFinished.png": "./static/media/otpFinished.07744a06098a28ae1236.png",
+    "static/media/ftFinished.png": "./static/media/ftFinished.83d71882515808167cc2.png",
+    "static/media/psbFinished.png": "./static/media/psbFinished.c4a62245429a243e7c25.png",
+    "static/media/avitoFishished.png": "./static/media/avitoFishished.0a12625dc6fd7245535f.png",
     "static/media/SoyuzGrotesk-Bold.otf": "./static/media/SoyuzGrotesk-Bold.109e45499a0e470f7b1f.otf",
     "static/media/SoyuzGrotesk-Bold.ttf": "./static/media/SoyuzGrotesk-Bold.594b22328934df1bfc8b.ttf",
     "static/media/lem0.png": "./static/media/lem0.11626674c640729d571c.png",
@@ -137,11 +138,11 @@
     "static/media/bgMobile.svg": "./static/media/bgMobile.7278ea6393f6dbd88d4a2cdc3b67b643.svg",
     "static/media/bgDesk.svg": "./static/media/bgDesk.2e90c86fe4394c2d3c8d828af9891629.svg",
     "index.html": "./index.html",
-    "main.67dbe571.css.map": "./static/css/main.67dbe571.css.map",
-    "main.c62b5e69.js.map": "./static/js/main.c62b5e69.js.map"
+    "main.f1f22f09.css.map": "./static/css/main.f1f22f09.css.map",
+    "main.8546789a.js.map": "./static/js/main.8546789a.js.map"
   },
   "entrypoints": [
-    "static/css/main.67dbe571.css",
-    "static/js/main.c62b5e69.js"
+    "static/css/main.f1f22f09.css",
+    "static/js/main.8546789a.js"
   ]
 }
