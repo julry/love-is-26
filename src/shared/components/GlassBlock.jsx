@@ -1,8 +1,11 @@
-import {LiquidGlass} from '@liquidglass/react';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-const WrapperStyled = styled(LiquidGlass)`
+const getFilter = (cssProps) => `
+  blur(${cssProps.$blur}px) saturate(${cssProps.$saturation}) contrast(${cssProps.$contrast}) brightness(${cssProps.$brightness});
+`;
+
+const WrapperStyled = styled.div`
   &::before {
     content: '';
     position: absolute;
@@ -29,13 +32,24 @@ const WrapperStyled = styled(LiquidGlass)`
     mask-composite: exclude;
     pointer-events: none;
   }
+
+  border-radius: ${({borderRadius}) => borderRadius}px;
+  -webkit-backdrop-filter: ${(props) => getFilter(props)};
+  backdrop-filter: ${(props) => getFilter(props)};
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.35);
+
+
+  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+      background-color: rgba(0,0,0,0);
+  }
 `;
 
 const Content = styled.div`
     width: 100%;
 `;
 
-export const GlassBlock = (props) => {
+export const GlassBlock = ({blur = 3.7, contrast = 0.8, brightness = 0.9, saturation = 0.9, ...props}) => {
     const glassRef = useRef(null);
     const [angle, setAngle] = useState(90);
     const [percentage, setPercantage] = useState(1);
@@ -52,18 +66,16 @@ export const GlassBlock = (props) => {
     return (
         <WrapperStyled
             borderRadius={40}
-            blur={3.7}
-            contrast={0.8}
-            brightness={0.9}
-            saturation={0.9}
-            displacementScale={1}
-            elasticity={1}
+            $blur={blur}
+            $contrast={contrast}
+            $brightness={brightness}
+            $saturation={saturation}
             $angle={angle}
             $percentage={percentage}
             {...props}
         >
             <Content 
-            ref={glassRef}
+              ref={glassRef}
             >
             {props.children}
                 </Content>

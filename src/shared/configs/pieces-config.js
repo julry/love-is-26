@@ -75,8 +75,8 @@ export const piecesConfig = {
         {
             id: 'avito0',
             originalPosition: {
-                x: 64, //-5.5
-                y: 65, //-13
+                x: 65,
+                y: 64.5,
             },
             position: {
                 x: 221,
@@ -105,8 +105,8 @@ export const piecesConfig = {
         {
             id: 'avito1',
            originalPosition: {
-                x: 171,
-                y: 65,
+                x: 172,
+                y: 64,
             },
             position: {
                 x: 221,
@@ -120,8 +120,8 @@ export const piecesConfig = {
                 x: 229,
                 y: 420,
             },
-            width: 111,
-            height: 53.5,
+            width: 134,
+            height: 54,
             image: avito1,
             verticesRel: [
                 {x: 0, y: 29},
@@ -135,8 +135,8 @@ export const piecesConfig = {
         {
             id: 'avito2',
            originalPosition: {
-                x: 186.5,
-                y: 165,
+                x: 174,
+                y: 164,
             },
             position: {
                 x: 37,
@@ -150,8 +150,8 @@ export const piecesConfig = {
                 x: 29,
                 y: 373,
             },
-            width: 111,
-            height: 108,
+            width: 112,
+            height: 109,
             image: avito3,
             verticesRel: [
                 {x: 0, y: 103},
@@ -165,8 +165,8 @@ export const piecesConfig = {
         {
             id: 'avito3',
            originalPosition: {
-                x: 92.5,
-                y: 195.5,
+                x: 93,
+                y: 194,
             },
             position: {
                 x: 118,
@@ -180,12 +180,12 @@ export const piecesConfig = {
                 x: 150,
                 y: 497,
             },
-            width: 100,
-            height: 79,
+            width: 95,
+            height: 80,
             image: avito4,
             verticesRel: [
                 {x: 0, y: 0},
-                {x: 46, y: 0},
+                {x: 48, y: 0},
                 {x: 95, y: 46},
                 {x: 95, y: 75},
                 {x: 86, y: 79},
@@ -196,8 +196,8 @@ export const piecesConfig = {
         {
             id: 'avito4',
            originalPosition: {
-                x: 74.5,
-                y: 118.5,
+                x: 75,
+                y: 117,
             },
             position: {
                 x: 101,
@@ -211,8 +211,8 @@ export const piecesConfig = {
                 x: 93,
                 y: 397,
             },
-            width: 96.5,
-            height: 77,
+            width: 97,
+            height: 78,
             image: avito5,
             verticesRel: [
                 {x: 0, y: 46},
@@ -226,8 +226,8 @@ export const piecesConfig = {
         {
             id: 'avito5',
            originalPosition: {
-                x: 138.5,
-                y: 165,
+                x: 139,
+                y: 164,
             },
             position: {
                 x: 262,
@@ -241,8 +241,8 @@ export const piecesConfig = {
                 x: 264,
                 y: 489,
             },
-            width: 64.5,
-            height: 76.5,
+            width: 65,
+            height: 76,
             image: avito6,
             verticesRel: [
                 {x: 0, y: 30},
@@ -255,8 +255,8 @@ export const piecesConfig = {
         {
             id: 'avito6',
            originalPosition: {
-                x: 171,
-                y: 118.5,
+                x: 172,
+                y: 117,
             },
             position: {
                 x: 29,
@@ -271,7 +271,7 @@ export const piecesConfig = {
                 y: 282,
             },
             width: 64,
-            height: 46.5,
+            height: 47,
             image: avito7,
             verticesRel: [
                 {x: 0, y: 0},
@@ -283,8 +283,8 @@ export const piecesConfig = {
         {
             id: 'avito7',
            originalPosition: {
-                x: 219,
-                y: 91.5,
+                x: 220,
+                y: 91,
             },
             position: {
                 x: 54,
@@ -298,8 +298,8 @@ export const piecesConfig = {
                 x: 21,
                 y: 504,
             },
-            width: 94.5,
-            height: 73.5,
+            width: 95,
+            height: 74,
             image: avito8,
             verticesRel: [
                 {x: 0, y: 27},
@@ -328,7 +328,7 @@ export const piecesConfig = {
                 x: 253,
                 y: 477,
             },
-            width: 85.5,
+            width: 86,
             height: 100,
             image: alfa0,
             verticesRel: [
@@ -345,7 +345,7 @@ export const piecesConfig = {
         {
             id: 'alfa1',
            originalPosition: {
-                x: 155.5,
+                x: 155,
                 y: 69,
             },
             position: {
@@ -360,7 +360,7 @@ export const piecesConfig = {
                 x: 195,
                 y: 416,
             },
-            width: 80,
+            width: 81,
             height: 69,
             image: alfa1,
             verticesRel: [
@@ -374,7 +374,7 @@ export const piecesConfig = {
         {
             id: 'alfa2',
            originalPosition: {
-                x: 235.5,
+                x: 235,
                 y: 69,
             },
             position: {
@@ -389,7 +389,7 @@ export const piecesConfig = {
                 x: 149,
                 y: 477,
             },
-            width: 60,
+            width: 61,
             height: 100,
             image: alfa2,
             verticesRel: [
@@ -405,7 +405,7 @@ export const piecesConfig = {
             id: 'alfa3',
            originalPosition: {
                 x: 119,
-                y: 230.5,
+                y: 230,
             },
             position: {
                 x: 124,
@@ -419,8 +419,8 @@ export const piecesConfig = {
                 x: 16,
                 y: 527,
             },
-            width: 115.5,
-            height: 54.5,
+            width: 115,
+            height: 55,
             image: alfa3,
             verticesRel: [
                 {x: 6, y: 0},
@@ -433,7 +433,7 @@ export const piecesConfig = {
         {
             id: 'alfa4',
            originalPosition: {
-                x: 107.5,
+                x: 107,
                 y: 138,
             },
             position: {
@@ -448,14 +448,14 @@ export const piecesConfig = {
                 x: 21,
                 y: 342,
             },
-            width: 128,
+            width: 129,
             height: 31,
             image: alfa4,
             verticesRel: [
                 {x: 0, y: 0},
                 {x: 0, y: 31},
-                {x: 128, y: 31},
-                {x: 128, y: 0},
+                {x: 129, y: 31},
+                {x: 129, y: 0},
             ]
         },
         {
@@ -476,8 +476,8 @@ export const piecesConfig = {
                 x: 32,
                 y: 457,
             },
-            width: 105.5,
-            height: 65.5,
+            width: 106,
+            height: 66,
             image: alfa5,
             verticesRel: [
                 {x: 0, y: 46},
@@ -490,7 +490,7 @@ export const piecesConfig = {
         {
             id: 'alfa6',
            originalPosition: {
-                x: 72.5,
+                x: 72,
                 y: 169,
             },
             position: {
@@ -505,7 +505,7 @@ export const piecesConfig = {
                 x: 28,
                 y: 397,
             },
-            width: 163,
+            width: 164,
             height: 46,
             image: alfa6,
             verticesRel: [
@@ -518,7 +518,7 @@ export const piecesConfig = {
         {
             id: 'alfa7',
            originalPosition: {
-                x: 72.5,
+                x: 72,
                 y: 169,
             },
             position: {
@@ -533,7 +533,7 @@ export const piecesConfig = {
                 x: 183,
                 y: 340,
             },
-            width: 162,
+            width: 164,
             height: 65,
             image: alfa7,
             verticesRel: [
@@ -626,7 +626,7 @@ export const piecesConfig = {
                 y: 375,
             },
             width: 123,
-            height: 91.5,
+            height: 92,
             image: vtb2,
             verticesRel: [
                 {x: 0, y: 70},
@@ -657,13 +657,13 @@ export const piecesConfig = {
                 y: 268,
             },
             width: 51,
-            height: 77.5,
+            height: 78,
             image: vtb3,
             verticesRel: [
                 {x: 0, y: 0},
                 {x: 51, y: 0},
-                {x: 51, y: 77.5},
-                {x: 23, y: 77.5},
+                {x: 51, y: 78},
+                {x: 23, y: 78},
                 {x: 0, y: 34},
             ]
         },
@@ -685,7 +685,7 @@ export const piecesConfig = {
                 x: -8,
                 y: 467,
             },
-            width: 152.5,
+            width: 153,
             height: 93,
             image: vtb4,
             verticesRel: [
@@ -716,13 +716,13 @@ export const piecesConfig = {
                 x: 131,
                 y: 502,
             },
-            width: 196.5,
-            height: 76.5,
+            width: 197,
+            height: 77,
             image: vtb5,
             verticesRel: [
                 {x: 33, y: 20},
                 {x: 32, y: 42},
-                {x: 145, y: 76.5},
+                {x: 145, y: 77},
                 {x: 193, y: 26},
                 {x: 153, y: 0},
                 {x: 105, y: 0},
@@ -747,7 +747,7 @@ export const piecesConfig = {
                 x: 156,
                 y: 406,
             },
-            width: 148.5,
+            width: 149,
             height: 94,
             image: vtb6,
             verticesRel: [
@@ -756,14 +756,14 @@ export const piecesConfig = {
                 {x: 113, y: 81},
                 {x: 131, y: 71},
                 {x: 131, y: 71},
-                {x: 147, y: 60},
+                {x: 149, y: 60},
             ]
         },
         {
             id: 'vtb7',
            originalPosition: {
                 x: 175,
-                y: 146.5,
+                y: 146,
             },
             position: {
                 x: 17,
@@ -778,14 +778,13 @@ export const piecesConfig = {
                 y: 381,
             },
             width: 114,
-            height: 71.5,
+            height: 72,
             image: vtb7,
             verticesRel: [
-                {x: 10, y: 4},
-                {x: 32, y: 40},
-                {x: 64, y: 46.5},
-                {x: 49, y: 62},
-                {x: 162, y: 65},
+                {x: 0, y: 15},
+                {x: 96, y: 0},
+                {x: 111, y: 30},
+                {x: 87, y: 72},
             ]
         },
     ],
@@ -808,7 +807,7 @@ export const piecesConfig = {
                 x: 249,
                 y: 309,
             },
-            width: 77.5,
+            width: 78,
             height: 150,
             image: lem0,
             verticesRel: [
@@ -826,7 +825,7 @@ export const piecesConfig = {
         {
             id: 'lem1',
            originalPosition: {
-                x: 149.5,
+                x: 149,
                 y: 93,
             },
             position: {
@@ -841,7 +840,7 @@ export const piecesConfig = {
                 x: 249,
                 y: 459,
             },
-            width: 67,
+            width: 68,
             height: 99,
             image: lem1,
             verticesRel: [
@@ -855,7 +854,7 @@ export const piecesConfig = {
         {
             id: 'lem2',
            originalPosition: {
-                x: 216.5,
+                x: 216,
                 y: 93,
             },
             position: {
@@ -870,7 +869,7 @@ export const piecesConfig = {
                 x: 45,
                 y: 332,
             },
-            width: 97.5,
+            width: 98,
             height: 99,
             image: lem2,
             verticesRel: [
@@ -885,8 +884,8 @@ export const piecesConfig = {
         {
             id: 'lem3',
            originalPosition: {
-                x: 216.5,
-                y: 106.5,
+                x: 215,
+                y: 105,
             },
             position: {
                 x: 244,
@@ -900,8 +899,8 @@ export const piecesConfig = {
                 x: 116,
                 y: 321,
             },
-            width: 97.5,
-            height: 105,
+            width: 99,
+            height: 106,
             image: lem3,
             verticesRel: [
                 {x: 0, y: 85},
@@ -915,8 +914,8 @@ export const piecesConfig = {
         {
             id: 'lem4',
            originalPosition: {
-                x: 108,
-                y: 181,
+                x: 107,
+                y: 180,
             },
             position: {
                 x: 244,
@@ -930,8 +929,8 @@ export const piecesConfig = {
                 x: 23,
                 y: 460,
             },
-            width: 93,
-            height: 121,
+            width: 94,
+            height: 122,
             image: lem4,
             verticesRel: [
                 {x: 0, y: 0},
@@ -944,8 +943,8 @@ export const piecesConfig = {
         {
             id: 'lem5',
            originalPosition: {
-                x: 149.5,
-                y: 192,
+                x: 149,
+                y: 189,
             },
             position: {
                 x: 253,
@@ -959,8 +958,8 @@ export const piecesConfig = {
                 x: 76,
                 y: 444,
             },
-            width: 67,
-            height: 49,
+            width: 68,
+            height: 52,
             image: lem5,
             verticesRel: [
                 {x: 0, y: 0},
@@ -1001,7 +1000,7 @@ export const piecesConfig = {
             id: 'lem7',
            originalPosition: {
                 x: 177,
-                y: 211.5,
+                y: 211,
             },
             position: {
                 x: 133,
@@ -1016,7 +1015,7 @@ export const piecesConfig = {
                 y: 483,
             },
             width: 116,
-            height: 95,
+            height: 96,
             image: lem7,
             verticesRel: [
                 {x: 24, y: 29},
@@ -1078,7 +1077,7 @@ export const piecesConfig = {
                 x: 213,
                 y: 320,
             },
-            width: 31.5,
+            width: 32,
             height: 145,
             image: otp1,
             verticesRel: [
@@ -1107,8 +1106,8 @@ export const piecesConfig = {
                 x: 18,
                 y: 430,
             },
-            width: 81.5,
-            height: 132.5,
+            width: 82,
+            height: 133,
             image: otp2,
             verticesRel: [
                 {x: 10, y: 46},
@@ -1136,8 +1135,8 @@ export const piecesConfig = {
                 x: -7,
                 y: 254,
             },
-            width: 132.5,
-            height: 132.5,
+            width: 133,
+            height: 133,
             image: otp3,
             verticesRel: [
                 {x: 34, y: 31},
@@ -1169,7 +1168,7 @@ export const piecesConfig = {
                 x: 63,
                 y: 490,
             },
-            width: 169,
+            width: 167,
             height: 107,
             image: otp4,
             verticesRel: [
@@ -1201,8 +1200,8 @@ export const piecesConfig = {
                 x: 229,
                 y: 517,
             },
-            width: 114,
-            height: 62,
+            width: 116,
+            height: 64,
             image: otp5,
             verticesRel: [
                 {x: 40, y: 0},
@@ -1216,7 +1215,7 @@ export const piecesConfig = {
             id: 'otp6',
            originalPosition: {
                 x: 82,
-                y: 115.5,
+                y: 115,
             },
             position: {
                 x: 247,
@@ -1230,8 +1229,8 @@ export const piecesConfig = {
                 x: 247,
                 y: 366,
             },
-            width: 90.5,
-            height: 136.5,
+            width: 91,
+            height: 137,
             image: otp6,
             verticesRel: [
                 {x: 25, y: 0},
@@ -1247,7 +1246,7 @@ export const piecesConfig = {
         {
             id: 'otp7',
            originalPosition: {
-                x: 107.5,
+                x: 107,
                 y: 69,
             },
             position: {
@@ -1262,7 +1261,7 @@ export const piecesConfig = {
                 x: 263,
                 y: 228,
             },
-            width: 65,
+            width: 66,
             height: 145,
             image: otp7,
             verticesRel: [
@@ -1296,7 +1295,7 @@ export const piecesConfig = {
                 y: 318,
             },
             width: 97,
-            height: 82.5,
+            height: 83,
             image: psb0,
             verticesRel: [
                 {x: 3, y: 36},
@@ -1356,7 +1355,7 @@ export const piecesConfig = {
                 x: 29,
                 y: 431,
             },
-            width: 86.5,
+            width: 87,
             height: 67,
             image: psb2,
             verticesRel: [
@@ -1371,7 +1370,7 @@ export const piecesConfig = {
         {
             id: 'psb3',
            originalPosition: {
-                x: 187.5,
+                x: 187,
                 y: 76,
             },
             position: {
@@ -1387,7 +1386,7 @@ export const piecesConfig = {
                 y: 338,
             },
             width: 103,
-            height: 159.5,
+            height: 160,
             image: psb3,
             verticesRel: [
                 {x: 0, y: 128},
@@ -1403,8 +1402,8 @@ export const piecesConfig = {
         {
             id: 'psb4',
             originalPosition: {
-                x: 115.5,
-                y: 204,
+                x: 115,
+                y: 203,
             },
             position: {
                 x: 214,
@@ -1418,8 +1417,8 @@ export const piecesConfig = {
                 x: 224,
                 y: 371,
             },
-            width: 125.5,
-            height: 82.5,
+            width: 126,
+            height: 84,
             image: psb4,
             verticesRel: [
                 {x: 1, y: 26},
@@ -1434,7 +1433,7 @@ export const piecesConfig = {
             id: 'psb5',
            originalPosition: {
                 x: 78,
-                y: 189.5,
+                y: 189,
             },
             position: {
                 x: 104,
@@ -1448,8 +1447,8 @@ export const piecesConfig = {
                 x: 144,
                 y: 530,
             },
-            width: 109.5,
-            height: 40.5,
+            width: 110,
+            height: 41,
             image: psb5,
             verticesRel: [
                 {x: 10, y: 0},
@@ -1540,7 +1539,7 @@ export const piecesConfig = {
                 y: 323,
             },
             width: 165,
-            height: 51.5,
+            height: 52,
             image: ft0,
             verticesRel: [
                 {x: 26, y: 28},
@@ -1571,7 +1570,7 @@ export const piecesConfig = {
                 y: 448,
             },
             width: 121,
-            height: 123.5,
+            height: 124,
             image: ft1,
             verticesRel: [
                 {x: 15, y: 14},
@@ -1587,8 +1586,8 @@ export const piecesConfig = {
         {
             id: 'ft2',
             originalPosition: {
-                x: 73,
-                y: 111.5,
+                x: 74,
+                y: 111,
             },
             position: {
                 x: 207,
@@ -1603,7 +1602,7 @@ export const piecesConfig = {
                 y: 501,
             },
             width: 133,
-            height: 77.5,
+            height: 78,
             image: ft2,
             verticesRel: [
                 {x: 8, y: 11},
@@ -1615,8 +1614,8 @@ export const piecesConfig = {
         {
             id: 'ft3',
            originalPosition: {
-                x: 133.5,
-                y: 136.5,
+                x: 133,
+                y: 136,
             },
             position: {
                 x: 122,
@@ -1630,8 +1629,8 @@ export const piecesConfig = {
                 x: 103,
                 y: 349,
             },
-            width: 72.5,
-            height: 113,
+            width: 73,
+            height: 114,
             image: ft3,
             verticesRel: [
                 {x: 0, y: 52.5},
@@ -1644,7 +1643,7 @@ export const piecesConfig = {
             id: 'ft4',
             originalPosition: {
                 x: 73,
-                y: 111.5,
+                y: 111,
             },
             position: {
                 x: 128,
@@ -1658,8 +1657,8 @@ export const piecesConfig = {
                 x: 284,
                 y: 406,
             },
-            width: 60.5,
-            height: 97.5,
+            width: 61,
+            height: 98,
             image: ft4,
             verticesRel: [
                 {x: 8, y: 10},
@@ -1689,7 +1688,7 @@ export const piecesConfig = {
                 y: 487,
             },
             width: 83,
-            height: 96.5,
+            height: 97,
             image: ft5,
             verticesRel: [
                 {x: 21, y: 17},
@@ -1702,7 +1701,7 @@ export const piecesConfig = {
         {
             id: 'ft6',
             originalPosition: {
-                x: 152.5,
+                x: 152,
                 y: 226,
             },
             position: {
@@ -1717,8 +1716,8 @@ export const piecesConfig = {
                 x: 195,
                 y: 383,
             },
-            width: 100.5,
-            height: 68.5,
+            width: 101,
+            height: 69,
             image: ft6,
             verticesRel: [
                 {x: 0, y: 0},
@@ -1733,8 +1732,8 @@ export const piecesConfig = {
         {
             id: 'ft7',
            originalPosition: {
-                x: 198.5,
-                y: 136.5,
+                x: 198,
+                y: 136,
             },
             position: {
                 x: 35,
@@ -1748,8 +1747,8 @@ export const piecesConfig = {
                 x: 25,
                 y: 311,
             },
-            width: 69.5,
-            height: 113,
+            width: 70,
+            height: 114,
             image: ft7,
             verticesRel: [
                 {x: 7, y: 0},
@@ -1763,8 +1762,8 @@ export const piecesConfig = {
         {
             id: 'ya0',
             originalPosition: {
-                x: 64,
-                y: 80,
+                x: 62,
+                y: 83,
             },
             position: {
                 x: 103,
@@ -1796,8 +1795,8 @@ export const piecesConfig = {
         {
             id: 'ya1',
             originalPosition: {
-                x: 161,
-                y: 80,
+                x: 159,
+                y: 83,
             },
             position: {
                 x: -5,
@@ -1826,8 +1825,8 @@ export const piecesConfig = {
         {
             id: 'ya2',
             originalPosition: {
-                x: 208,
-                y: 138,
+                x: 206,
+                y: 141,
             },
             position: {
                 x: 238,
@@ -1842,7 +1841,7 @@ export const piecesConfig = {
                 y: 488,
             },
             width: 102,
-            height: 82.5,
+            height: 83,
             image: ya2,
             verticesRel: [
                 {x: 0, y: 0},
@@ -1856,8 +1855,8 @@ export const piecesConfig = {
         {
             id: 'ya3',
            originalPosition: {
-                x: 175,
-                y: 175.5,
+                x: 173,
+                y: 178,
             },
             position: {
                 x: 256,
@@ -1871,8 +1870,8 @@ export const piecesConfig = {
                 x: 252,
                 y: 388,
             },
-            width: 87.5,
-            height: 61,
+            width: 88,
+            height: 62,
             image: ya3,
             verticesRel: [
                 {x: 0, y: 6},
@@ -1885,8 +1884,8 @@ export const piecesConfig = {
         {
             id: 'ya4',
             originalPosition: {
-                x: 153.5,
-                y: 220.5,
+                x: 151,
+                y: 223,
             },
             position: {
                 x: 28,
@@ -1900,8 +1899,8 @@ export const piecesConfig = {
                 x: 27,
                 y: 398,
             },
-            width: 109,
-            height: 71,
+            width: 110,
+            height: 72,
             image: ya4,
             verticesRel: [
                 {x: 2, y: 44},
@@ -1915,23 +1914,23 @@ export const piecesConfig = {
         {
             id: 'ya5',
            originalPosition: {
-                x: 92,
-                y: 182,
+                x: 90,
+                y: 185,
             },
             position: {
                 x: 129,
                 y: 412,
             },
             positionLandscape: {
-                x: 890,
-                y: 495,
+                x: 880,
+                y: 445,
             },
             positionBottom: {
                 x: 143,
                 y: 370,
             },
-            width: 91.5,
-            height: 85.5,
+            width: 92,
+            height: 86,
             image: ya5,
             verticesRel: [
                 {x: 0, y: 7},
@@ -1944,15 +1943,15 @@ export const piecesConfig = {
         {
             id: 'ya6',
             originalPosition: {
-                x: 64,
-                y: 138,
+                x: 62,
+                y: 141,
             },
             position: {
                 x: 28,
                 y: 109,
             },
             positionLandscape: {
-                x: 1080,
+                x: 960,
                 y: 685,
             },
             positionBottom: {
@@ -1960,7 +1959,7 @@ export const piecesConfig = {
                 y: 472,
             },
             width: 144,
-            height: 52.5,
+            height: 53,
             image: ya6,
             verticesRel: [
                 {x: 15, y: 0},
@@ -1973,8 +1972,8 @@ export const piecesConfig = {
         {
             id: 'ya7',
            originalPosition: {
-                x: 81.5,
-                y: 138,
+                x: 79,
+                y: 141,
             },
             position: {
                 x: 38,
@@ -1988,8 +1987,8 @@ export const piecesConfig = {
                 x: 161,
                 y: 302,
             },
-            width: 165.5,
-            height: 52.5,
+            width: 166,
+            height: 53,
             image: ya7,
             verticesRel: [
                 {x: 10, y: 50},

@@ -11,6 +11,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-size: ${({$ratio}) => $ratio * 19}px;
+    /* background-color: rgba(255, 255, 255, 0.2); */
 
     & svg {
         height: ${({$svgHeight, $ratio}) => $svgHeight * $ratio}px;

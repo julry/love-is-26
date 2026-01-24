@@ -93,6 +93,10 @@ export const companiesConfig = [
         finishTitle: 'работать вместе и становиться сильнее',
         finishText: 'В Альфа-Банке её создают через коллаборации, где совместная работа усиливает профессиональные навыки каждого.\n\nУвидеть возможности роста в Альфе → больше о стажировках ',
         finalHeart: finalAlfa,
+        finishMargin: {
+            left: -1,
+            top: -1,
+        },
     },
     {
         id: 'vtb',
@@ -219,10 +223,14 @@ export const companiesConfig = [
         bgPic: bgPsb,
         pieces: piecesConfig.psb,
         finishTitle: 'чувствовать смысл в том, что ты делаешь',
-        finishText: 'В ПСБ это чувство рождается из доверия, заботы и ощущения причастности к большим проектам, результатами которых можно гордиться.\n\nОщущение гордости за общий результат — именно то, что ждет вас в ПСБ — больше о стажировках ',
+        finishText: 'В ПСБ это чувство рождается из доверия, заботы и ощущения причастности к большим проектам, результатами которых можно гордиться.\n\nОщущение гордости за общий результат — именно то, что ждет вас в ПСБ — больше о стажировках ',
         finalHeart: finalPsb,
         paddingText: 'var(--spacing_x5)',
-        additionalLove: 'к работе'
+        additionalLove: 'к работе',
+        finishMargin: {
+            left: 1,
+            top: 2,
+        },
     },
     {
         id: 'yandex',
@@ -236,7 +244,7 @@ export const companiesConfig = [
             sizeSm: { width: 85, height: 24, top: 29 },
             sizeLg: { width: 149, height: 42 },
         },
-        heartSize: { width: 365, height: 374 },
+        heartSize: { width: 365, height: 372 },
         heartPic: yaHeart,
         bgPicLand: bgDeskYa,
         bgPic: bgYa,
@@ -244,6 +252,10 @@ export const companiesConfig = [
         finishTitle: 'не бояться сделать первый шаг в IT',
         finishText: 'В Яндексе она живёт в среде, где есть доступ к реальным проектам, поддержка менторов и пространство, где не страшно пробовать и ошибаться.\n\nКак это ощущается изнутри → актуальные возможности ',
         finalHeart: finalYa,
+        finishMargin: {
+            left: -3,
+            top: 3,
+        },
     },
     {
         id: 'ft',

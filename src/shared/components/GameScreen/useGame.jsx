@@ -51,7 +51,7 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
     useEffect(() => {
         if (!height || !width || !dpr) return;
         const isWide = width > TABLET_WIDTH;
-        const koef = Math.min(isWide ? height / 920 : height / 600, 1);
+        const koef = Math.min(isWide ? Math.round(height / 920 * 100) / 100 : height / 600, 1);
         const sizeKoef = (isWide ? 2.101 : 1);
         const heartHeight = heartSize.height * sizeKoef * koef;
         const heartWidth = heartSize.width * sizeKoef * koef;
@@ -122,7 +122,7 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
                             const puzzleWidth = puzzle.width * koef * sizeKoef;
                             const puzzleHeight = puzzle.height * koef * sizeKoef;
                             let xKoef = isLandscape ? Math.min(width / 1270, 1) : Math.max(width / 375, 1);
-                            let dif = isWide ? Math.max((height+  headerDistance) - 750, 0) / 2 : Math.max((height + headerDistance) - 650, 0) / 2;
+                            let dif = isWide ? Math.max((height + headerDistance) - 750, 0) / 2 : Math.max((height + headerDistance) - 650, 0) / 2;
 
                             if (isLandscape) {
                                 dif = 0;
@@ -205,8 +205,6 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
                             return false;
                         }
                         
-                        // if (shape.id === 'puzzle0') return true;
-                        
                         // Преобразование вершин в абсолютные координаты
                         const absVertices = shape.verticesRel.map(vertex => ({
                             x: shape.position.x + vertex.x,
@@ -217,7 +215,6 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
                         return this.isPointInPolygon({x: clickX, y: clickY}, absVertices);
                     },
                     getSelectedPiece(x, y) {
-                        // const selected = [];
                         for (let i = 0; i < Object.values(this.puzzles).length; i++) {
                             const piece = Object.values(this.puzzles)[i];
                             if (this.checkClickOnShape(x, y, piece) && !piece?.isLocked) {
@@ -310,6 +307,12 @@ export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
                     render() {
                         const ctx = this.ctx;
                         const canvas = this.canvas;
+                        ctx.imageSmoothingEnabled = false;
+
+                        // // // Для браузеров с префиксами
+                        ctx.webkitImageSmoothingEnabled = false;
+                        ctx.mozImageSmoothingEnabled = false;
+                        ctx.msImageSmoothingEnabled = false;
 
                         // Очищаем холст
                         ctx.clearRect(0, 0, canvas.width, canvas.height);

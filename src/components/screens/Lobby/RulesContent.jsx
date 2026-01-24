@@ -6,6 +6,10 @@ import { media } from '../../../styles/mixins';
 
 const RulesBlock = styled.div`
     padding: var(--spacing_x6);
+
+    ${media.desktop`
+        padding: 30px;
+    `}
 `;
 
 const Text = styled.p`
@@ -14,12 +18,17 @@ const Text = styled.p`
 
     ${media.desktop`
         margin: 40px 0;
+        font-size: 23px;
     `}
 `;
 
 const Wrapper = styled.div`
     text-align: center;
     max-width: var(--content_sm);
+
+    ${media.desktop`
+        max-width: 488px;
+    `}
 `;
 
 const Title = styled.h3`
@@ -39,13 +48,13 @@ export const RulesContent = ({onClick}) => {
     const ratio = useSizeRatio();
     return (
         <Wrapper>
-            <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
+            <GlassBlock $angle={135} brightness={1.1} saturation={1.2}>
                 <RulesBlock>
                     <Title>правила</Title>
                     <Text>
                         Перед тобой — дерево,
-                        на котором растут сердца компаний. Как плоды созревают на ветвях,
-                        так компании взращивают любовь своих сотрудников. Собери пазл каждого сердца и узнай, что для них значит любовь.
+                        на котором растут сердца компаний. Как плоды созревают на ветвях,
+                        так компании взращивают любовь своих сотрудников. Собери все сердца и узнай, что значит любовь для каждого работодателя.
                     </Text>
                     <ButtonStyled
                         glassProps={{

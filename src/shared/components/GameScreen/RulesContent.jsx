@@ -39,7 +39,7 @@ export const RulesContent = ({onClick}) => {
     const ratio = useSizeRatio();
     return (
         <Wrapper>
-            <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
+            <GlassBlock $angle={135} brightness={1.1} saturation={1.2}>
                 <RulesBlock>
                     <Title>Как играть</Title>
                     <Text>

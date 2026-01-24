@@ -202,7 +202,7 @@ export const Form = ({onClick}) => {
     return (
         <ModalWrapperStyled>
             <FormWrapper>
-                <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
+                <GlassBlock $angle={135} brightness={1.1} saturation={1.2}>
                     <GameEndContent>
                         <Title>Оставь почту, чтобы принять участие в розыгрыше крутых призов!</Title>
                         <GlassBlockStyled 

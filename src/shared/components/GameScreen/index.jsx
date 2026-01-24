@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { piecesConfig } from "../../configs/pieces-config";
 import { Button } from '../Button';
 import { TABLET_WIDTH } from '../../../constants';
-import { AnimatePresence, motion, useAnimate } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { GlassBlock } from "../GlassBlock";
 import { media } from '../../../styles/mixins';
 import { useSizeRatio } from "../../../contexts/SizeRatioContext";
@@ -67,6 +67,8 @@ const EndImageWrapper = styled(motion.div)`
     max-height: ${({ $height }) => $height ? $height + 'px' : 'unset'};
     z-index: 2;
     padding-bottom: ${({ $heartPositionY }) => $heartPositionY}px;
+    margin-top: ${({ $finishMargin }) => $finishMargin.top ?? 0}px;
+    margin-left: ${({ $finishMargin }) => $finishMargin.left ?? 0}px;
 
     ${media.tablet`
         max-height: unset;
@@ -135,6 +137,10 @@ const EndContent = styled(motion.div)`
 
     ${media.tablet`
         max-width: ${({ $ratio }) => $ratio * 590}px;
+
+        @media screen and (orientation: landscape) {
+            max-width: ${({ $ratio }) => $ratio * 824}px;
+        }
     `}
 
     ${media.desktop`
@@ -162,7 +168,7 @@ const Title = styled.h3`
 `;
 
 const ButtonStyled = styled(Button)`
-    background-color: rgba(255, 255, 255, 0.34);
+    background-color: rgba(255, 255, 255, 0.24);
     padding: ${({ $ratio }) => $ratio * 19}px ${({ $ratio }) => $ratio * 34}px;
 
     ${media.desktop`
@@ -233,7 +239,8 @@ export const GameScreen = ({ companyId }) => {
 
     const { 
         heartSize, bgPic, bgPicLand, logo, finalHeart, 
-        finishTitle, finishText, paddingText, maxTitleWidth, additionalLove
+        finishTitle, finishText, paddingText, maxTitleWidth, 
+        additionalLove, finishMargin
     } = company;
 
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
@@ -248,6 +255,7 @@ export const GameScreen = ({ companyId }) => {
     const [heartHeight, setHeartHeight] = useState(heartSize.height);
     const [heartWidth, setHeartWidth] = useState(heartSize.width);
     const [infoHeight, setInfoHeight] = useState(0);
+    const [heartFinishMargin, setHeartFinishMargin] = useState(finishMargin ?? {});
 
     const $info = useRef();
 
@@ -279,11 +287,15 @@ export const GameScreen = ({ companyId }) => {
 
         const infoRect = $info.current.getBoundingClientRect();
 
-        setInfoHeight((infoRect.height - heartPositionY) / (isFirst ? 2.7 : 3.1));
+        setInfoHeight(Math.max(15 * sizeKoef, (infoRect.height / 2 - y) * koef) + 15 * sizeKoef);
         setHeartPositionY(isWide || !isFirst ? 0 : (headerHeight / 2) * koef);
         setWidth(rect.width);
         setHeight(rect.height);
         setDpr(window?.devicePixelRatio || 1);
+        setHeartFinishMargin({
+            left: (finishMargin?.left ?? 0) * sizeKoef * koef,
+            top: (finishMargin?.top ?? 0) * sizeKoef * koef,
+        })
     }, []);
 
 
@@ -365,7 +377,11 @@ export const GameScreen = ({ companyId }) => {
                             }, opacity: { duration: 0.6, delay: 0.2 }
                         }}
                     >
-                        <EndImageWrapper $height={isFirst ? height : undefined} $heartPositionY={heartPositionY}>
+                        <EndImageWrapper 
+                            $finishMargin={heartFinishMargin}
+                            $height={isFirst ? height : undefined} 
+                            $heartPositionY={heartPositionY}
+                        >
                             <img src={finalHeart} width={heartWidth + 'px'} height={heartHeight + 'px'} />
                         </EndImageWrapper>
                     </EndModal>
@@ -382,13 +398,13 @@ export const GameScreen = ({ companyId }) => {
                             duration: 0.4,
                         },
                     }}>
-                    <GlassBlock $angle={135} brightness={1.1} saturation={1.2} elasticity={1.5}>
+                    <GlassBlock $angle={135} brightness={1.1} saturation={1.2}>
                         <EndTextWrapper $padding={paddingText}>
                             <Title $maxTitleWidth={maxTitleWidth}>Любовь{additionalLove ? ` ${additionalLove}`: ''} — это {finishTitle}</Title>
                             <EndText>
                                 {finishText}<a>тут</a>.
                             </EndText>
-                            <ButtonStyled onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
+                            <ButtonStyled glassProps={{$angle: 105}} onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
                         </EndTextWrapper>
                     </GlassBlock>
                 </EndContent>
@@ -405,7 +421,6 @@ export const GameScreen = ({ companyId }) => {
                     )
                 }
             </AnimatePresence>
-
         </Wrapper>
     )
 

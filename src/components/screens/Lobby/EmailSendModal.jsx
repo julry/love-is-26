@@ -56,7 +56,7 @@ const Text = styled.p`
 export const EmailSendModal = ({onClose}) => (
     <ModalWrapperStyled>
         <ContentWrapper>
-            <GlassBlock $angle={125} brightness={1.1} saturation={1.2} elasticity={1.5}>
+            <GlassBlock $angle={125} brightness={1.1} saturation={1.2}>
                 <Content>
                     <Text>
                         Твоя почта отправлена.{'\n'}
