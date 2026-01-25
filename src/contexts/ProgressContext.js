@@ -38,7 +38,7 @@ export function ProgressProvider(props) {
     useEffect(() => {
         client.current = new FTClient(
             'https://games-admin.fut.ru/api/',
-            ''
+            'tree-of-love'
         );
     }, []);
 
@@ -65,15 +65,15 @@ export function ProgressProvider(props) {
     const registrateEmail = async ({email, isMailsAgreed}) => {
         setIsRegistered(true);
         // localStorage.setItem('isRegistered', true);
-    //    try {
-    //         const emailUser = await client?.current.findRecord('email', email);
-    //         if (emailUser) return;
+       try {
+            const emailUser = await client?.current.findRecord('email', email);
+            if (emailUser) return;
 
-    //         const record = await client?.current.createRecord({email, isMailsAgreed});
-    //         return record; 
-    //    } catch (e) {
-    //         return {isError: true}
-    //    }
+            const record = await client?.current.createRecord({email, isMailsAgreed});
+            return record; 
+       } catch (e) {
+            return {isError: true}
+       }
     };
 
     function next(nextScreen) {

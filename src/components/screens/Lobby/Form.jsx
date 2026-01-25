@@ -176,7 +176,7 @@ export const Form = ({onClick}) => {
     const [isCorrect, setIsCorrect] = useState(true);
     
     const ratio = useSizeRatio();
-    const isButtonDisabled = !isAgreed || !email || !isCorrect;
+    const isButtonDisabled = !isAgreed || !email || !isCorrect || isSending;
 
     const handleSubmit = async () => {
         if (isButtonDisabled) return;
