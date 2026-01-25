@@ -841,7 +841,7 @@ export const piecesConfig = {
                 y: 459,
             },
             width: 68,
-            height: 99,
+            height: 100,
             image: lem1,
             verticesRel: [
                 {x: 0, y: 6},
@@ -929,7 +929,7 @@ export const piecesConfig = {
                 x: 23,
                 y: 460,
             },
-            width: 94,
+            width: 95,
             height: 122,
             image: lem4,
             verticesRel: [
