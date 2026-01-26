@@ -13,7 +13,6 @@ import { useProgress } from '../../../contexts/ProgressContext';
 import { HeartsBlockLandscape } from './landscape/HeartsBlockLandscape';
 import { GlassBlock } from '../../../shared/components/GlassBlock';
 import { companiesLength } from '../../../shared/configs/companies-config';
-import { SCREEN_NAMES } from '../../../constants/screens';
 import { GameEnd } from './GameEnd';
 import { Form } from './Form';
 import { EmailSendModal } from './EmailSendModal';
@@ -40,10 +39,7 @@ const SoundButton = styled.div`
     position: absolute;
     bottom: var(--spacing_x3);
     right: var(--spacing_x3);
-
-    & * {
-        z-index: 5 !important;
-    }
+    z-index: 5;
 `;
 
 const Logo = styled.img`
