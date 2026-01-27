@@ -93,7 +93,9 @@ export function ProgressProvider(props) {
         handleToggleAudio,
         audioRef,
         isMusicPlaying,
-        isRegistered
+        isRegistered,
+        isPrizesShown,
+        setIsPrizesShown,
     }
 
     return (

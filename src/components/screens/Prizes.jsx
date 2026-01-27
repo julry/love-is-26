@@ -34,7 +34,8 @@ import leftBig from '../../assets/images/prizes/leftBigLamps.png';
 import rightLamps from '../../assets/images/prizes/rightLamps.png';
 import topLamps from '../../assets/images/prizes/topLamps.png';
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Wrapper = styled.div`
     display: flex;
@@ -65,6 +66,7 @@ const CloseButton = styled.div`
 `;
 
 const Content = styled.div`
+    position: relative;
     overflow: hidden auto;
     display: flex;
     flex-wrap: wrap;
@@ -190,13 +192,58 @@ const Amount = styled.h4`
     }
 `;
 
+const Tip = styled(motion.div)`
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+    background: transparent;
+`;
+const TipHeader = styled(Tip)`
+    z-index: 1;
+    height: 100%;
+   
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    
+`;
+
+const GlassTip = styled(GlassBlock)`
+    width: auto;
+    width: 69px;
+    height: 69px;
+
+    & > div {
+        width: auto;
+    }
+`;
+
+const TipArrow = styled.div`
+    width: 69px;
+    height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+`;
+
 export const Prizes = () => {
     const ratio = useSizeRatio();
-    const {isLandscape, next} = useProgress();
+    const {isLandscape, next, isPrizesShown, setIsPrizesShown} = useProgress();
     const contentRef = useRef();
+
+    const handleOffTip = (e) => {
+        if (isPrizesShown) return;
+
+        setIsPrizesShown(true);
+    }
 
     return (
         <Wrapper $bg={isLandscape ? bgDesk : bgMob}>
+            {!isPrizesShown && (
+                    <TipHeader exit={{opacity: 0}} />
+                )}
             <CloseButton>
                 <Button isIcon onClick={() => next(SCREEN_NAMES.LOBBY)} svgProps={{ svgWidth: 14, svgHeight: 15 }}>
                     <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +258,20 @@ export const Prizes = () => {
             <TitleBlock $angle={135}>
                 <Title>призы</Title>
             </TitleBlock>
-            <Content ref={contentRef}>
+            <Content ref={contentRef} onScroll={handleOffTip}>
+                <AnimatePresence>
+                {!isPrizesShown && (
+                    <Tip exit={{opacity: 0}}>
+                        <GlassTip>
+                            <TipArrow>
+                                <svg width="15" height="35" viewBox="0 0 15 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.07107 0.292893C7.68054 -0.0976311 7.04738 -0.0976311 6.65685 0.292893L0.292892 6.65685C-0.0976319 7.04738 -0.0976319 7.68054 0.292892 8.07107C0.683417 8.46159 1.31658 8.46159 1.70711 8.07107L7.36396 2.41421L13.0208 8.07107C13.4113 8.46159 14.0445 8.46159 14.435 8.07107C14.8256 7.68054 14.8256 7.04738 14.435 6.65685L8.07107 0.292893ZM6.65685 33.9071C7.04738 34.2976 7.68054 34.2976 8.07107 33.9071L14.435 27.5431C14.8256 27.1526 14.8256 26.5195 14.435 26.1289C14.0445 25.7384 13.4113 25.7384 13.0208 26.1289L7.36396 31.7858L1.70711 26.1289C1.31658 25.7384 0.683417 25.7384 0.292892 26.1289C-0.0976319 26.5195 -0.0976319 27.1526 0.292892 27.5431L6.65685 33.9071ZM7.36396 1H6.36396V33.2H7.36396H8.36396V1H7.36396Z" fill="#FFF6EF"/>
+                                </svg>
+                            </TipArrow>
+                        </GlassTip>
+                    </Tip>
+                )}
+            </AnimatePresence>
                 <Card $isLandscape={isLandscape} $isFullWidth>
                     {isLandscape ? (
                         <>
