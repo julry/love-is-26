@@ -98,7 +98,7 @@ export const companiesConfig = [
             left: -1,
             top: -1,
         },
-        link: 'https://fut.ru/s/promo_2',
+        link: 'https://t.me/alfafuture/2157/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     },
     {
         id: 'vtb',
@@ -129,7 +129,7 @@ export const companiesConfig = [
         finalHeart: finalVtb,
         paddingText: 'var(--spacing_x5)',
         maxTitleWidth: 245,
-        link: 'https://fut.ru/s/promo_3'
+        link: 'https://t.me/vtb_career/1858/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo'
     },
     {
         id: 'lemana',
@@ -195,7 +195,7 @@ export const companiesConfig = [
         finishText: 'Наконец найти тот самый work-life balance? В ОТП Банке это возможно! Гибкий график позволяет совмещать работу, учёбу и хобби, а в корпоративных сообществах по интересам можно обмениваться опытом, заниматься спортом и творчеством, вместе смотреть кино… и не только.\n\nГотов узнать про все возможности? → актуальные стажировки ',
         finalHeart: finalOtp,
         paddingText: 'var(--spacing_x5)',
-        link: 'https://fut.ru/s/promo_5',
+        link: 'https://t.me/OTPyoung/1195/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     },
     {
         id: 'psb',
@@ -236,7 +236,7 @@ export const companiesConfig = [
             left: 1,
             top: 2,
         },
-        link: 'https://fut.ru/s/promo_6',
+        link: 'https://t.me/psb_team/641/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     },
     {
         id: 'yandex',
@@ -1201,7 +1201,7 @@ export const companiesConfig = [
         finishText: 'Удалённый формат, друзья в команде и проекты со смыслом — вместе с FutureToday. Так выглядит любовь к делу и жизни.\n\nОщутить, как это работает → актуальные стажировки ',
         finalHeart: finalFt,
         paddingText: 'var(--spacing_x5)',
-        link: 'https://fut.ru/s/promo_8',
+        link: 'https://t.me/futru/2122/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     }
 ]
 

@@ -4,6 +4,7 @@ import { FTGame } from "../components/screens/FtGame";
 import { LemanaGame } from "../components/screens/LemanaGame";
 import { Lobby } from "../components/screens/Lobby";
 import { OtpGame } from "../components/screens/OTPGame";
+import { Prizes } from "../components/screens/Prizes";
 import { PSBGame } from "../components/screens/PsbGame";
 import { VtbGame } from "../components/screens/VtbGame";
 import { YandexGame } from "../components/screens/YandexGame";
@@ -18,6 +19,7 @@ export const SCREEN_NAMES = {
     YA: 'YA',
     PSB: 'PSB',
     OTP: 'OTP',
+    PRIZES: 'PRIZES',
 }
 
 export const screens = {
@@ -30,4 +32,5 @@ export const screens = {
     [SCREEN_NAMES.PSB]: PSBGame,
     [SCREEN_NAMES.OTP]: OtpGame,
     [SCREEN_NAMES.YA]: YandexGame,
+    [SCREEN_NAMES.PRIZES]: Prizes,
 }

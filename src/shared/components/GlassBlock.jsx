@@ -49,7 +49,7 @@ const Content = styled.div`
     width: 100%;
 `;
 
-export const GlassBlock = ({blur = 3.7, contrast = 0.8, brightness = 0.9, saturation = 0.9, ...props}) => {
+export const GlassBlock = ({initialAngle, blur = 3.7, contrast = 0.8, brightness = 0.9, saturation = 0.9, ...props}) => {
     const glassRef = useRef(null);
     const [angle, setAngle] = useState(90);
     const [percentage, setPercantage] = useState(1);
@@ -60,7 +60,7 @@ export const GlassBlock = ({blur = 3.7, contrast = 0.8, brightness = 0.9, satura
         const {width, height} = glassRef.current?.getBoundingClientRect();
 
         setPercantage(40 / width);
-        setAngle(width / height + 90);
+        setAngle(initialAngle ?? (width / height) * 100 + 90);
     }, []);
 
     return (

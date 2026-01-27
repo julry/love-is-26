@@ -32,7 +32,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h3`
-    font-size: calc( 40 / 14 * var(--font_md));
+    font-size: calc(40 / 14 * var(--font_md));
 `;
 
 const ButtonStyled = styled(Button)`
