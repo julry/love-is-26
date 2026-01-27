@@ -69,7 +69,7 @@ export function ProgressProvider(props) {
             const emailUser = await client?.current.findRecord('email', email);
             if (emailUser) return;
 
-            const record = await client?.current.createRecord({email, isMailsAgreed});
+            const record = await client?.current.createRecord({email, sendagree: isMailsAgreed, pdagree: true});
             return record; 
        } catch (e) {
             return {isError: true}

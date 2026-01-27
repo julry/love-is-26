@@ -259,7 +259,7 @@ export const Form = ({onClick}) => {
                                     </a>
                                     , а также с{"\u00A0"}
                                     <a
-                                        href={'/'}
+                                        href={'https://tree-of-love.fut.ru/agreement.pdf'}
                                         target="_blank"
                                         rel="noreferrer"
                                     >правилами проведения акции</a>.

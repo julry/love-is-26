@@ -65,6 +65,7 @@ export const companiesConfig = [
         finishTitle: 'улучшать собственную жизнь и жизнь людей вокруг',
         finishText: 'В Авито она проявляется в доверии, обучении и совместной работе, из которых вырастает результат.\n\nГотов развиваться вместе с Авито? → актуальные стажировки ',
         finalHeart: finalAvito,
+        link: 'https://fut.ru/s/promo_1',
     },
     {
         id: 'alfa',
@@ -97,6 +98,7 @@ export const companiesConfig = [
             left: -1,
             top: -1,
         },
+        link: 'https://fut.ru/s/promo_2',
     },
     {
         id: 'vtb',
@@ -127,6 +129,7 @@ export const companiesConfig = [
         finalHeart: finalVtb,
         paddingText: 'var(--spacing_x5)',
         maxTitleWidth: 245,
+        link: 'https://fut.ru/s/promo_3'
     },
     {
         id: 'lemana',
@@ -161,6 +164,7 @@ export const companiesConfig = [
         finishText: 'В Лемана ПРО это доверие, обучение, поддержка коллег и комфортная адаптация с первого дня.\n\nПрисоединяйся и проектируй своё будущее вместе с командой → актуальные возможности ',
         finalHeart: finalLem,
         paddingText: 'var(--spacing_x6)',
+        link: 'https://fut.ru/s/promo_4',
     },
     {
         id: 'otp',
@@ -191,6 +195,7 @@ export const companiesConfig = [
         finishText: 'Наконец найти тот самый work-life balance? В ОТП Банке это возможно! Гибкий график позволяет совмещать работу, учёбу и хобби, а в корпоративных сообществах по интересам можно обмениваться опытом, заниматься спортом и творчеством, вместе смотреть кино… и не только.\n\nГотов узнать про все возможности? → актуальные стажировки ',
         finalHeart: finalOtp,
         paddingText: 'var(--spacing_x5)',
+        link: 'https://fut.ru/s/promo_5',
     },
     {
         id: 'psb',
@@ -231,6 +236,7 @@ export const companiesConfig = [
             left: 1,
             top: 2,
         },
+        link: 'https://fut.ru/s/promo_6',
     },
     {
         id: 'yandex',
@@ -256,6 +262,7 @@ export const companiesConfig = [
             left: -3,
             top: 3,
         },
+        link: 'https://fut.ru/s/promo_7',
     },
     {
         id: 'ft',
@@ -1194,6 +1201,7 @@ export const companiesConfig = [
         finishText: 'Удалённый формат, друзья в команде и проекты со смыслом — вместе с FutureToday. Так выглядит любовь к делу и жизни.\n\nОщутить, как это работает → актуальные стажировки ',
         finalHeart: finalFt,
         paddingText: 'var(--spacing_x5)',
+        link: 'https://fut.ru/s/promo_8',
     }
 ]
 

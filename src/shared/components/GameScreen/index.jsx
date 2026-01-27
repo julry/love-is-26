@@ -240,7 +240,7 @@ export const GameScreen = ({ companyId }) => {
     const { 
         heartSize, bgPic, bgPicLand, logo, finalHeart, 
         finishTitle, finishText, paddingText, maxTitleWidth, 
-        additionalLove, finishMargin
+        additionalLove, finishMargin, link
     } = company;
 
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
@@ -402,7 +402,7 @@ export const GameScreen = ({ companyId }) => {
                         <EndTextWrapper $padding={paddingText}>
                             <Title $maxTitleWidth={maxTitleWidth}>Любовь{additionalLove ? ` ${additionalLove}`: ''} — это {finishTitle}</Title>
                             <EndText>
-                                {finishText}<a>тут</a>.
+                                {finishText}<a href={link} target="_blank">тут</a>.
                             </EndText>
                             <ButtonStyled glassProps={{$angle: 105}} onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
                         </EndTextWrapper>
