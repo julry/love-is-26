@@ -24,6 +24,15 @@
 }
 
 @font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../assets/fonts/HelveticaNeue/HelveticaNeue-Bold.otf') format('opentype'),
+    local('HelveticaNeueBold'), local('HelveticaNeue-Bold'), local('HelveticaNeue Bold');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'SoyuzGrotesk';
     src: url('../assets/fonts/SoyuzGrotesk/SoyuzGrotesk-Bold.otf') format('opentype'),
     url('../assets/fonts/SoyuzGrotesk/SoyuzGrotesk-Bold.ttf') format('truetype'),
