@@ -33,7 +33,7 @@ const WrapperStyled = styled.div`
     pointer-events: none;
   }
 
-  border-radius: ${({borderRadius}) => borderRadius}px;
+  border-radius: ${({$borderRadius}) => $borderRadius}px;
   -webkit-backdrop-filter: ${(props) => getFilter(props)};
   backdrop-filter: ${(props) => getFilter(props)};
   overflow: hidden;
@@ -49,7 +49,7 @@ const Content = styled.div`
     width: 100%;
 `;
 
-export const GlassBlock = ({initialAngle, blur = 3.7, contrast = 0.8, brightness = 0.9, saturation = 0.9, ...props}) => {
+export const GlassBlock = ({initialAngle, borderRadius = 40, blur = 3.7, contrast = 0.8, brightness = 0.9, saturation = 0.9, ...props}) => {
     const glassRef = useRef(null);
     const [angle, setAngle] = useState(90);
     const [percentage, setPercantage] = useState(1);
@@ -65,7 +65,7 @@ export const GlassBlock = ({initialAngle, blur = 3.7, contrast = 0.8, brightness
 
     return (
         <WrapperStyled
-            borderRadius={40}
+            $borderRadius={borderRadius}
             $blur={blur}
             $contrast={contrast}
             $brightness={brightness}

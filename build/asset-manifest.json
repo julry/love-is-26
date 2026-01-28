@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.f1f22f09.css",
-    "main.js": "./static/js/main.afab2e16.js",
+    "main.js": "./static/js/main.af592158.js",
     "static/media/loveis.wav": "./static/media/loveis.5cde0843e08d4d965d74.wav",
     "static/media/loveis.mp3": "./static/media/loveis.62028c103df8102c8a6f.mp3",
     "static/media/loveis.ogg": "./static/media/loveis.ab7f896b84f27e906f13.ogg",
@@ -66,7 +66,7 @@
     "static/media/vtbPrize.png": "./static/media/vtbPrize.177c4f2d134929f089a8.png",
     "static/media/avitoPrize.png": "./static/media/avitoPrize.1aa9bd109525b534f2fe.png",
     "static/media/ftPrize1.png": "./static/media/ftPrize1.a59ec34daac0201a6a73.png",
-    "static/media/otpPrize.png": "./static/media/otpPrize.33aad8c1834b5641e9c6.png",
+    "static/media/otpPrize.png": "./static/media/otpPrize.91d74a4cd0e2339eb874.png",
     "static/media/alfaPrize.png": "./static/media/alfaPrize.1ef266cd0e6b19bcddcb.png",
     "static/media/lemanaPrize.png": "./static/media/lemanaPrize.4f67ddd6e01f633bbe5a.png",
     "static/media/ftPrize3.png": "./static/media/ftPrize3.11d17ee2829b9686edc0.png",
@@ -157,10 +157,10 @@
     "static/media/logoYandex.svg": "./static/media/logoYandex.71f69b4893f7491f194a79e5ff70f86a.svg",
     "index.html": "./index.html",
     "main.f1f22f09.css.map": "./static/css/main.f1f22f09.css.map",
-    "main.afab2e16.js.map": "./static/js/main.afab2e16.js.map"
+    "main.af592158.js.map": "./static/js/main.af592158.js.map"
   },
   "entrypoints": [
     "static/css/main.f1f22f09.css",
-    "static/js/main.afab2e16.js"
+    "static/js/main.af592158.js"
   ]
 }

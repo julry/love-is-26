@@ -57,7 +57,7 @@ export const GameEnd = ({onClick}) => {
 
     return (
         <GameEndWrapper $ratio={ratio}> 
-            <GlassBlock $angle={135} brightness={1.1} saturation={1.2}>
+            <GlassBlock $angle={135} brightness={0.75} saturation={0.95} blur={7}>
                 <GameEndContent>
                     <Title>Ты собрал все сердца!</Title>
                     <Text>
