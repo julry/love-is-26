@@ -66,9 +66,11 @@ export const companiesConfig = [
         finishText: 'В Авито она проявляется в доверии, обучении и совместной работе, из которых вырастает результат.\n\nГотов развиваться вместе с Авито? → актуальные стажировки ',
         finalHeart: finalAvito,
         link: 'https://fut.ru/s/promo_1',
+        metrika: 'Avito',
     },
     {
         id: 'alfa',
+        metrika: 'Alfa-Bank',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 105 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,10 +100,11 @@ export const companiesConfig = [
             left: -1,
             top: -1,
         },
-        link: 'https://t.me/alfafuture/2157/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
+        link: 'https://t.me/alfafuture/2245/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     },
     {
         id: 'vtb',
+        metrika: 'VTB',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 87 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,10 +131,11 @@ export const companiesConfig = [
         finishText: 'ВТБ is 700+ пар горящих стажёрских глаз, 17 незабываемых тимбилдингов, 602 встречи на Random Coffee, 300+ часов интенсивной прокачки hard и soft skills, 10 000+ обедов с наставниками, 400+ welcome packs… и все это делается с любовью.\n\nГотов стать частью комьюнити? → актуальные стажировки ',
         finalHeart: finalVtb,
         paddingText: 'var(--spacing_x5)',
-        link: 'https://t.me/vtb_career/1858/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo'
+        link: 'https://t.me/vtb_career/1456/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo'
     },
     {
         id: 'lemana',
+        metrika: 'Lemana',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,6 +171,7 @@ export const companiesConfig = [
     },
     {
         id: 'otp',
+        metrika: 'OTP',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 113 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,10 +199,11 @@ export const companiesConfig = [
         finishText: 'Наконец найти тот самый work-life balance? В ОТП Банке это возможно! Гибкий график позволяет совмещать работу, учёбу и хобби, а в корпоративных сообществах по интересам можно обмениваться опытом, заниматься спортом и творчеством, вместе смотреть кино… и не только.\n\nГотов узнать про все возможности? → актуальные стажировки ',
         finalHeart: finalOtp,
         paddingText: 'var(--spacing_x5)',
-        link: 'https://t.me/OTPyoung/1195/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
+        link: 'https://t.me/OTPyoung/1207/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     },
     {
         id: 'psb',
+        metrika: 'PSB',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 98 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -239,6 +245,7 @@ export const companiesConfig = [
     },
     {
         id: 'yandex',
+        metrika: 'Yandex',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 85 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -261,10 +268,11 @@ export const companiesConfig = [
             left: -3,
             top: 3,
         },
-        link: 'https://fut.ru/s/promo_7',
+        link: 'https://yandex.ru/yaintern/internship/?utm_source=fut&utm_medium=treeoflove&utm_campaign=yaintern26',
     },
     {
         id: 'ft',
+        metrika: 'FT',
         logo: {
             image: (
                 <svg width="100%" height="100%" viewBox="0 0 107 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1200,7 +1208,7 @@ export const companiesConfig = [
         finishText: 'Удалённый формат, друзья в команде и проекты со смыслом — вместе с FutureToday. Так выглядит любовь к делу и жизни.\n\nОщутить, как это работает → актуальные стажировки ',
         finalHeart: finalFt,
         paddingText: 'var(--spacing_x5)',
-        link: 'https://t.me/futru/2122/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
+        link: 'https://t.me/futru/2131/?utm_source=fut&utm_medium=treeoflove&utm_campaign=promo',
     }
 ]
 

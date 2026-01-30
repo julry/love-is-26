@@ -17,6 +17,7 @@ import { GameEnd } from './GameEnd';
 import { Form } from './Form';
 import { EmailSendModal } from './EmailSendModal';
 import { SCREEN_NAMES } from '../../../constants/screens';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
 const Header = styled.div`
     display: flex;
@@ -123,13 +124,15 @@ export const Lobby = () => {
         setIsShownRules(false);
     };
 
-    const handleClickHeart = (id) => {
+    const handleClickHeart = (id, metrika) => {
+        reachMetrikaGoal('start_' + metrika);
         next(id);
     }
 
     const handleOpenForm = () => {
         setIsFormScreen(true);
         setIsEndPart(false);
+        reachMetrikaGoal('gifts');
     }
 
     const handleCloseForm = () => {
@@ -176,7 +179,7 @@ export const Lobby = () => {
                     </svg>
                 </Button>
             </SoundButton>
-            {isLandscape ? <HeartsLandscapeStyled opened={openedCompanies} onClick={(id) => handleClickHeart(id)} /> : <HeartsStyled onClick={(id) => handleClickHeart(id)} opened={openedCompanies} />}
+            {isLandscape ? <HeartsLandscapeStyled opened={openedCompanies} onClick={handleClickHeart} /> : <HeartsStyled onClick={handleClickHeart} opened={openedCompanies} />}
             <GameInfoWrapper $ratio={ratio}>
                 <GlassBlock
                     $percentage={10}

@@ -11,9 +11,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { GlassBlock } from "../GlassBlock";
 import { media } from '../../../styles/mixins';
 import { useSizeRatio } from "../../../contexts/SizeRatioContext";
-import { companiesConfig } from "../../configs/companies-config";
+import { companiesConfig, companiesLength } from "../../configs/companies-config";
 import { ModalWrapper } from "../Modal";
 import { RulesContent } from "./RulesContent";
+import { reachMetrikaGoal } from "../../../utils/reachMetrikaGoal";
 
 const Wrapper = styled.div`
     display: flex;
@@ -240,7 +241,7 @@ export const GameScreen = ({ companyId }) => {
     const { 
         heartSize, bgPic, bgPicLand, logo, finalHeart, 
         finishTitle, finishText, paddingText, maxTitleWidth, 
-        additionalLove, finishMargin, link
+        additionalLove, finishMargin, link, metrika
     } = company;
 
     const { next, openedCompanies, setOpenedCompanies, isLandscape } = useProgress();
@@ -258,13 +259,27 @@ export const GameScreen = ({ companyId }) => {
     const [heartFinishMargin, setHeartFinishMargin] = useState(finishMargin ?? {});
 
     const $info = useRef();
+    const $isLast = useRef();
 
 
     const isFirst = useMemo(() => !openedCompanies.length, []);
 
     const handleBack = () => {
+        if (isEnd && !isAlreadyFinished) {
+            reachMetrikaGoal(`finish_${metrika}`);
+        }
+
+        if ($isLast.current) {
+            reachMetrikaGoal('final_screen');
+        }
+
         next(SCREEN_NAMES.LOBBY);
+
     };
+
+    const handleLink = () => {
+       reachMetrikaGoal(`site_${metrika}`);
+    }
 
     const handleClickRules = () => {
         if (isEnd) return;
@@ -301,7 +316,11 @@ export const GameScreen = ({ companyId }) => {
 
     const stopGame = useCallback(() => {
         const storageCompanies = openedCompanies?.includes?.(companyId) ? openedCompanies : [...openedCompanies, companyId];
-        // localStorage.setItem('doneCompanies', JSON.stringify(storageCompanies));
+        localStorage.setItem('doneCompanies', JSON.stringify(storageCompanies));
+
+        if (storageCompanies.length === companiesLength) {
+            $isLast.current = true;
+        }
         setOpenedCompanies(prev => prev?.includes?.(companyId) ? prev : [...prev, companyId]);
         setIsEnd(true);
     }, []);
@@ -402,7 +421,7 @@ export const GameScreen = ({ companyId }) => {
                         <EndTextWrapper $padding={paddingText}>
                             <Title $maxTitleWidth={maxTitleWidth}>Любовь{additionalLove ? ` ${additionalLove}`: ''} — это {finishTitle}</Title>
                             <EndText>
-                                {finishText}<a href={link} target="_blank">тут</a>.
+                                {finishText}<a href={link} onClick={handleLink} target="_blank">тут</a>.
                             </EndText>
                             <ButtonStyled glassProps={{$angle: 105}} onClick={handleBack} $ratio={ratio}>забрать</ButtonStyled>
                         </EndTextWrapper>

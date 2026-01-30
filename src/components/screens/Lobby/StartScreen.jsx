@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { RulesContent } from "./RulesContent";
 import { media } from "../../../styles/mixins";
 import { useProgress } from "../../../contexts/ProgressContext";
+import { reachMetrikaGoal } from "../../../utils/reachMetrikaGoal";
 
 const StartButton = styled(Button)`
     width: ${({ $ratio }) => $ratio * 69}px !important;
@@ -46,12 +47,17 @@ const Wrapper = styled(motion.div)`
 `;
 
 export const StartScreen = ({ onClose }) => {
-    const { handleToggleAudio } = useProgress();
+    const { handleToggleAudio, oppenedCompanies } = useProgress();
     const ratio = useSizeRatio();
     const [isRules, setIsRules] = useState(false);
 
     const handleStart = () => {
         setIsRules(true);
+
+        if (!oppenedCompanies?.length) {
+            reachMetrikaGoal('start');
+        }
+        
         if (localStorage.getItem('music') === 'off') return;
         handleToggleAudio();
     }

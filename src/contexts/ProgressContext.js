@@ -64,7 +64,7 @@ export function ProgressProvider(props) {
 
     const registrateEmail = async ({email, isMailsAgreed}) => {
         setIsRegistered(true);
-        // localStorage.setItem('isRegistered', true);
+        localStorage.setItem('isRegistered', true);
        try {
             const emailUser = await client?.current.findRecord('email', email);
             if (emailUser) return;

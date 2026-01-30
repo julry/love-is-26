@@ -7,6 +7,7 @@ import { ModalWrapper } from '../../../shared/components/Modal';
 import { useState } from 'react';
 import { emailRegExp } from '../../../constants/regexp';
 import { useProgress } from '../../../contexts/ProgressContext';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
 const ModalWrapperStyled = styled(ModalWrapper)`
     padding: var(--spacing_x3);
@@ -181,6 +182,7 @@ export const Form = ({onClick}) => {
     const handleSubmit = async () => {
         if (isButtonDisabled) return;
         setIsSending(true);
+        reachMetrikaGoal('email');
         await registrateEmail({email, isMailsAgreed});
         onClick();
     }
