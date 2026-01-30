@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.8f8a49c4.css",
-    "main.js": "./static/js/main.560088c7.js",
+    "main.js": "./static/js/main.664f00d0.js",
     "static/media/loveis.wav": "./static/media/loveis.5cde0843e08d4d965d74.wav",
     "static/media/loveis.mp3": "./static/media/loveis.62028c103df8102c8a6f.mp3",
     "static/media/loveis.ogg": "./static/media/loveis.ab7f896b84f27e906f13.ogg",
@@ -66,6 +66,7 @@
     "static/media/logoFt.svg": "./static/media/logoFt.4a7469782eb940207e0e1c137d15336d.svg",
     "static/media/vtbPrize.png": "./static/media/vtbPrize.177c4f2d134929f089a8.png",
     "static/media/avitoPrize.png": "./static/media/avitoPrize.1aa9bd109525b534f2fe.png",
+    "static/media/psbPrizes.png": "./static/media/psbPrizes.08a2f438572bfd84607e.png",
     "static/media/ftPrize1.png": "./static/media/ftPrize1.a59ec34daac0201a6a73.png",
     "static/media/otpPrize.png": "./static/media/otpPrize.91d74a4cd0e2339eb874.png",
     "static/media/alfaPrize.png": "./static/media/alfaPrize.1ef266cd0e6b19bcddcb.png",
@@ -156,12 +157,13 @@
     "static/media/prizesBgMobile.svg": "./static/media/prizesBgMobile.263023caf6fe15640157ee2e9ad046a0.svg",
     "static/media/logoVtb.svg": "./static/media/logoVtb.287a7bf79a3018306af59812728661bf.svg",
     "static/media/logoYandex.svg": "./static/media/logoYandex.71f69b4893f7491f194a79e5ff70f86a.svg",
+    "static/media/logoPsb.svg": "./static/media/logoPsb.93fbe0874a2a1bcc8e510e5bfb9b7ba0.svg",
     "index.html": "./index.html",
     "main.8f8a49c4.css.map": "./static/css/main.8f8a49c4.css.map",
-    "main.560088c7.js.map": "./static/js/main.560088c7.js.map"
+    "main.664f00d0.js.map": "./static/js/main.664f00d0.js.map"
   },
   "entrypoints": [
     "static/css/main.8f8a49c4.css",
-    "static/js/main.560088c7.js"
+    "static/js/main.664f00d0.js"
   ]
 }

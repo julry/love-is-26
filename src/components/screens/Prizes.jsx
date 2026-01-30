@@ -19,6 +19,7 @@ import lemanaPrize from '../../assets/images/prizes/lemanaPrize.png';
 import otpPrize from '../../assets/images/prizes/otpPrize.png';
 import vtbPrize from '../../assets/images/prizes/vtbPrize.png';
 import yandexPrize from '../../assets/images/prizes/yandexPrize.png';
+import psbPrizes from '../../assets/images/prizes/psbPrizes.png';
 
 import logoAlfa from '../../assets/images/prizes/logoAlfa.svg';
 import logoAvito from '../../assets/images/prizes/logoAvito.svg';
@@ -27,6 +28,7 @@ import logoLemana from '../../assets/images/prizes/logoLemana.svg';
 import logoOtp from '../../assets/images/prizes/logoOtp.svg';
 import logoYandex from '../../assets/images/prizes/logoYandex.svg';
 import logoVtb from '../../assets/images/prizes/logoVtb.svg';
+import logoPsb from '../../assets/images/prizes/logoPsb.svg';
 
 import cornerBotLamps from '../../assets/images/prizes/cornerBottomLamps.png';
 import cornerTopLamps from '../../assets/images/prizes/cornerTopLamps.png';
@@ -272,14 +274,14 @@ export const Prizes = () => {
                     </Tip>
                 )}
             </AnimatePresence>
-                <Card $isLandscape={isLandscape} $isFullWidth>
+                <Card $isLandscape={isLandscape}>
                     {isLandscape ? (
                         <>
-                            <Element $top={20} $left={50} $width={129} $height={49} src={logoFt} alt=""/>
+                            <Element $top={20} $left={50} $width={92} $height={35} src={logoFt} alt=""/>
                             <PrizeGroup $isLandscape>
-                                <Element $top={39} $left={0} $width={207} $height={157} src={ftPrize1} alt=""/>
-                                <Element $top={8} $left={204} $width={169} $height={189} src={ftPrize2} alt=""/>
-                                <Element $top={27} $left={366} $width={135} $height={174} src={ftPrize3} alt=""/>
+                                <Element $top={69} $left={45} $width={140} $height={106} src={ftPrize1} alt=""/>
+                                <Element $top={18} $left={175} $width={149} $height={167} src={ftPrize2} alt=""/>
+                                <Element $top={37} $left={304} $width={113} $height={146} src={ftPrize3} alt=""/>
                             </PrizeGroup>
                             <Element $top={-63} $right={84} $width={201} $height={124} src={topLamps} alt=""/>
                             <Element $bottom={-18} $right={-14} $width={108} $height={87} src={cornerBotLamps} alt=""/>
@@ -410,6 +412,29 @@ export const Prizes = () => {
                             </PrizeGroup>
                             <Element $top={-43 * ratio} $left={94 * ratio} $width={141 * ratio} $height={84 * ratio} src={topLamps} alt=""/>
                             <Element $shouldRotate $top={38 * ratio} $left={-35 * ratio} $width={70 * ratio} $height={87 * ratio} src={rightLamps} alt=""/>
+                        </>
+                    )}
+                </Card>
+                <Card $isLandscape={isLandscape}>
+                    {isLandscape ? (
+                        <>
+                        <Element $top={28} $left={51} $width={112} $height={34} src={logoPsb} alt=""/>
+                        <Element $top={-47} $left={-24} $width={138} $height={127} src={cornerTopLamps} alt=""/>
+                        <Element $bottom={-18} $right={-14} $width={108} $height={87} src={cornerBotLamps} alt=""/>
+                        <PrizeGroup>
+                                <Amount $ratio={ratio}>5x</Amount>
+                                <Element $top={13} $left={188} $width={238} $height={180} src={psbPrizes} alt=""/>
+                            </PrizeGroup>
+                        </>
+                    ) : (
+                        <>
+                            <Element $top={14 * ratio} $left={35 * ratio} $width={64 * ratio} $height={23 * ratio} src={logoPsb} alt=""/>
+                            <PrizeGroup>
+                                <Amount $ratio={ratio}>5x</Amount>
+                                <Element $top={0} $left={115 * ratio} $width={194 * ratio} $height={147 * ratio} src={psbPrizes} alt=""/>
+                            </PrizeGroup>
+                            <Element $top={-35 * ratio} $left={-17 * ratio} $width={102 * ratio} $height={94 * ratio} src={cornerTopLamps} alt=""/>
+                            <Element $bottom={-15 * ratio} $right={-38 * ratio} $width={137 * ratio} $height={67 * ratio} src={cornerBotLamps} alt=""/>
                         </>
                     )}
                 </Card>
