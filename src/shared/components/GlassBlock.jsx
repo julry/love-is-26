@@ -31,6 +31,7 @@ const WrapperStyled = styled.div`
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+    transform: translateZ(0);
   }
 
   border-radius: ${({$borderRadius}) => $borderRadius}px;
@@ -38,7 +39,7 @@ const WrapperStyled = styled.div`
   backdrop-filter: ${(props) => getFilter(props)};
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.35);
-
+  transform: translateZ(0);
 
   @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
       background-color: rgba(0,0,0,0);

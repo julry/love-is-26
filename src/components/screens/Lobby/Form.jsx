@@ -68,6 +68,7 @@ const Input = styled.input`
     border-radius: 20px;
     padding: 0 var(--spacing_x3);
     font-size: var(--font_md);
+    background-color: rgba(255, 255, 255, 0.1);
 
     &::placeholder {
         color: #FFF6EF;
@@ -113,6 +114,12 @@ const RadioIconStyled = styled.div`
     flex-shrink: 0;
     width: ${({ $ratio }) => $ratio * 17}px;
     height: ${({ $ratio }) => $ratio * 17}px;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    ${media.desktop`
+       width: 17px;
+       height: 17px;
+    `}
 `;
 
 const RadioButtonLabel = styled.label`
