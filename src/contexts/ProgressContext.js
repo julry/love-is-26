@@ -62,18 +62,9 @@ export function ProgressProvider(props) {
         }
     }
 
-    const registrateEmail = async ({email, isMailsAgreed}) => {
+    const closeEndBlock = () => {
         setIsRegistered(true);
         localStorage.setItem('isRegistered', true);
-       try {
-            const emailUser = await client?.current.findRecord('email', email);
-            if (emailUser) return;
-
-            const record = await client?.current.createRecord({email, sendagree: isMailsAgreed, pdagree: true});
-            return record; 
-       } catch (e) {
-            return {isError: true}
-       }
     };
 
     function next(nextScreen) {
@@ -84,7 +75,7 @@ export function ProgressProvider(props) {
         screen,
         currentScreen,
         next,
-        registrateEmail,
+        closeEndBlock,
         isLandscape,
         openedCompanies,
         setOpenedCompanies,

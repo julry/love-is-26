@@ -103,7 +103,7 @@ const GameInfo = styled.div`
 
 export const Lobby = () => {
     const ratio = useSizeRatio();
-    const { isLandscape, openedCompanies, isPlayed, setIsPlayed, next, handleToggleAudio, isMusicPlaying, isRegistered } = useProgress();
+    const { isLandscape, openedCompanies, isPlayed, setIsPlayed, next, handleToggleAudio, isMusicPlaying, isRegistered, closeEndBlock } = useProgress();
     const [isGameStarted, setIsGameStarted] = useState(isPlayed);
     const [isShownStartScreen, setIsShownStartScreen] = useState(!isPlayed);
     const [isShownRules, setIsShownRules] = useState(false);
@@ -123,6 +123,11 @@ export const Lobby = () => {
     const handleClickHeart = (id, metrika) => {
         reachMetrikaGoal('start_' + metrika);
         next(id);
+    }
+
+    const handleCloseEnd = () => {
+        closeEndBlock();
+        setIsEndPart(false);
     }
 
     return (
@@ -177,7 +182,7 @@ export const Lobby = () => {
                     </GameInfo>
                 </GlassBlock>
             </GameInfoWrapper>
-            {isEndPart && <GameEnd onClick={() => setIsEndPart(false)} />}
+            {isEndPart && <GameEnd onClick={handleCloseEnd} />}
             <AnimatePresence>
                 {isShownStartScreen && (<StartScreen onClose={handleCloseStartScreen} />)}
                 {isShownRules && (<Rules onClose={handleCloseRules} />)}
