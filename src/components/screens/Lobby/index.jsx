@@ -14,8 +14,6 @@ import { HeartsBlockLandscape } from './landscape/HeartsBlockLandscape';
 import { GlassBlock } from '../../../shared/components/GlassBlock';
 import { companiesLength } from '../../../shared/configs/companies-config';
 import { GameEnd } from './GameEnd';
-import { Form } from './Form';
-import { EmailSendModal } from './EmailSendModal';
 import { SCREEN_NAMES } from '../../../constants/screens';
 import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
@@ -109,8 +107,6 @@ export const Lobby = () => {
     const [isGameStarted, setIsGameStarted] = useState(isPlayed);
     const [isShownStartScreen, setIsShownStartScreen] = useState(!isPlayed);
     const [isShownRules, setIsShownRules] = useState(false);
-    const [isFormScreen, setIsFormScreen] = useState(false);
-    const [isEmailSendScreen, setIsEmailSendScreen] = useState(false);
     const isFinished = openedCompanies.length === companiesLength;
     const [isEndPart, setIsEndPart] = useState(isFinished && !isRegistered);
 
@@ -128,17 +124,6 @@ export const Lobby = () => {
         reachMetrikaGoal('start_' + metrika);
         next(id);
     }
-
-    const handleOpenForm = () => {
-        setIsFormScreen(true);
-        setIsEndPart(false);
-        reachMetrikaGoal('gifts');
-    }
-
-    const handleCloseForm = () => {
-        setIsFormScreen(false);
-        setIsEmailSendScreen(true);
-    };
 
     return (
         <AnimatedBg isGameStarted={isGameStarted} isFinished={isFinished}>
@@ -192,9 +177,7 @@ export const Lobby = () => {
                     </GameInfo>
                 </GlassBlock>
             </GameInfoWrapper>
-            {isEndPart && <GameEnd onClick={handleOpenForm} />}
-            {isFormScreen && <Form onClick={handleCloseForm} />}
-            {isEmailSendScreen && <EmailSendModal onClose={() => setIsEmailSendScreen(false)} />}
+            {isEndPart && <GameEnd onClick={() => setIsEndPart(false)} />}
             <AnimatePresence>
                 {isShownStartScreen && (<StartScreen onClose={handleCloseStartScreen} />)}
                 {isShownRules && (<Rules onClose={handleCloseRules} />)}

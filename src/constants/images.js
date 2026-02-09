@@ -102,22 +102,6 @@ import ya5 from '../assets/images/ya/ya5.png';
 import ya6 from '../assets/images/ya/ya6.png';
 import ya7 from '../assets/images/ya/ya7.png';
 
-import alfaPrize from '../assets/images/prizes/alfaPrize.png';
-import avitoPrize from '../assets/images/prizes/avitoPrize.png';
-import ftPrize1 from '../assets/images/prizes/ftPrize1.png';
-import ftPrize2 from '../assets/images/prizes/ftPrize2.png';
-import ftPrize3 from '../assets/images/prizes/ftPrize3.png';
-import lemanaPrize from '../assets/images/prizes/lemanaPrize.png';
-import otpPrize from '../assets/images/prizes/otpPrize.png';
-import vtbPrize from '../assets/images/prizes/vtbPrize.png';
-import yandexPrize from '../assets/images/prizes/yandexPrize.png';
-
-
-import cBLamp from '../assets/images/prizes/cornerBottomLamps.png';
-import cTLamp from '../assets/images/prizes/cornerTopLamps.png';
-import rLamp from '../assets/images/prizes/rightLamps.png';
-import tLamp from '../assets/images/prizes/topLamps.png';
-import lLamp from '../assets/images/prizes/leftBigLamps.png';
 
 export const preloadImages = [
     alfa0, alfa1, alfa2, alfa3, alfa4, alfa5, alfa6, alfa7, bgAlfa, bgDeskAlfa, finalAlfa, alfaHeart,
@@ -128,6 +112,4 @@ export const preloadImages = [
     psb0, psb1, psb2, psb3, psb4, psb5, psb6, psb7, psbHeart, finalPsb, bgPsb, bgDeskPsb, 
     ft0, ft1, ft2, ft3, ft4, ft5, ft6, ft7, ftHeart, finalFt, bgFt, bgDeskFt, 
     ya0, ya1, ya2, ya3, ya4, ya5, ya6, ya7, yaHeart, finalYa, bgYa, bgDeskYa, 
-    alfaPrize, avitoPrize, ftPrize1, ftPrize2, ftPrize3, lemanaPrize, otpPrize, 
-    vtbPrize, yandexPrize, cBLamp, cTLamp, rLamp, tLamp, lLamp,
 ];

@@ -27,6 +27,12 @@ const GameEndContent = styled.div`
     justify-content: center;
     text-align: center;
     padding: var(--spacing_x6);
+    text-wrap: balance;
+    -webkit-text-wrap: balance;
+
+    ${media.desktop`
+        padding: var(--spacing_x6) 40px;
+    `}
 `;
 
 const Text = styled.p`
@@ -71,7 +77,7 @@ export const GameEnd = ({onClick}) => {
                         $ratio={ratio}
                         onClick={onClick}
                     >
-                        к призам
+                        вернуться к дереву
                     </ButtonStyled>
                 </GameEndContent>
             </GlassBlock>

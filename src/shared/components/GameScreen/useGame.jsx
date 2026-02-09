@@ -7,7 +7,7 @@ import { useProgress } from "../../../contexts/ProgressContext";
 export const useGame = ({ company, width, height, dpr, isFirst, stopGame }) => {
     const ratio = useSizeRatio();
     const { pieces: initialPuzzles, heartSize, heartPic: fieldPic } = company;
-    const { isLandscape, openedCompanies } = useProgress();
+    const { isLandscape } = useProgress();
     const gameContainerRef = useRef(null);
     const [endModal, setEndModal] = useState({shown: false, isWin: false});
     const [currentScore, setCurrentScore] = useState(0);
