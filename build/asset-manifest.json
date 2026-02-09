@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.8f8a49c4.css",
-    "main.js": "./static/js/main.a1bff3ce.js",
+    "main.js": "./static/js/main.470e36c9.js",
     "static/media/loveis.wav": "./static/media/loveis.5cde0843e08d4d965d74.wav",
     "static/media/loveis.mp3": "./static/media/loveis.62028c103df8102c8a6f.mp3",
     "static/media/loveis.ogg": "./static/media/loveis.ab7f896b84f27e906f13.ogg",
@@ -63,17 +63,7 @@
     "static/media/avitoFishished.png": "./static/media/avitoFishished.0a12625dc6fd7245535f.png",
     "static/media/SoyuzGrotesk-Bold.otf": "./static/media/SoyuzGrotesk-Bold.109e45499a0e470f7b1f.otf",
     "static/media/SoyuzGrotesk-Bold.ttf": "./static/media/SoyuzGrotesk-Bold.594b22328934df1bfc8b.ttf",
-    "static/media/logoFt.svg": "./static/media/logoFt.4a7469782eb940207e0e1c137d15336d.svg",
-    "static/media/vtbPrize.png": "./static/media/vtbPrize.177c4f2d134929f089a8.png",
-    "static/media/avitoPrize.png": "./static/media/avitoPrize.1aa9bd109525b534f2fe.png",
-    "static/media/psbPrizes.png": "./static/media/psbPrizes.08a2f438572bfd84607e.png",
-    "static/media/ftPrize1.png": "./static/media/ftPrize1.a59ec34daac0201a6a73.png",
-    "static/media/otpPrize.png": "./static/media/otpPrize.91d74a4cd0e2339eb874.png",
-    "static/media/alfaPrize.png": "./static/media/alfaPrize.1ef266cd0e6b19bcddcb.png",
-    "static/media/lemanaPrize.png": "./static/media/lemanaPrize.4f67ddd6e01f633bbe5a.png",
-    "static/media/ftPrize3.png": "./static/media/ftPrize3.11d17ee2829b9686edc0.png",
     "static/media/lem0.png": "./static/media/lem0.4c5433ede3bea1d0c0a2.png",
-    "static/media/yandexPrize.png": "./static/media/yandexPrize.4a862d049d00c8030cfb.png",
     "static/media/lem4.png": "./static/media/lem4.497b087eebe26ea4c4ea.png",
     "static/media/otp4.png": "./static/media/otp4.c91a99508534a1b6fbfc.png",
     "static/media/ya0.png": "./static/media/ya0.90d115e1303bfd79ec38.png",
@@ -82,7 +72,6 @@
     "static/media/avito0.png": "./static/media/avito0.ce21d2372f1a9f66e64e.png",
     "static/media/alfa0.png": "./static/media/alfa0.d5940d80554b6b98084c.png",
     "static/media/ft1.png": "./static/media/ft1.b4864bd6b43e75b3deaf.png",
-    "static/media/ftPrize2.png": "./static/media/ftPrize2.596a218e0d3706a92656.png",
     "static/media/ftTree.png": "./static/media/ftTree.99c8a16f274e6dd5d514.png",
     "static/media/lem2.png": "./static/media/lem2.31935f0e61606fb8d3ec.png",
     "static/media/alfaTree.png": "./static/media/alfaTree.cdba89627f2302e7b0fb.png",
@@ -147,23 +136,14 @@
     "static/media/lem5.png": "./static/media/lem5.591b695047411f91c0f9.png",
     "static/media/avito6.png": "./static/media/avito6.8c4ba35a00dfec2b679f.png",
     "static/media/otp1.png": "./static/media/otp1.706a19c3b4ea85173e48.png",
-    "static/media/logoOtp.svg": "./static/media/logoOtp.278234239752326a071b95420bbe30b8.svg",
-    "static/media/logoAlfa.svg": "./static/media/logoAlfa.bffe2ff8cd77316733c678bd4d268db6.svg",
     "static/media/bgMobile.svg": "./static/media/bgMobile.7278ea6393f6dbd88d4a2cdc3b67b643.svg",
     "static/media/bgDesk.svg": "./static/media/bgDesk.2e90c86fe4394c2d3c8d828af9891629.svg",
-    "static/media/logoLemana.svg": "./static/media/logoLemana.cfa3cb4571e73bd0061d083c153c7a92.svg",
-    "static/media/logoAvito.svg": "./static/media/logoAvito.2b21f39f38608ec7c8cb6707d299899c.svg",
-    "static/media/prizesBgDesk.svg": "./static/media/prizesBgDesk.c7a36c2eb89c1b5047741319bf520e2f.svg",
-    "static/media/prizesBgMobile.svg": "./static/media/prizesBgMobile.263023caf6fe15640157ee2e9ad046a0.svg",
-    "static/media/logoVtb.svg": "./static/media/logoVtb.287a7bf79a3018306af59812728661bf.svg",
-    "static/media/logoYandex.svg": "./static/media/logoYandex.71f69b4893f7491f194a79e5ff70f86a.svg",
     "index.html": "./index.html",
-    "static/media/logoPsb.svg": "./static/media/logoPsb.93fbe0874a2a1bcc8e510e5bfb9b7ba0.svg",
     "main.8f8a49c4.css.map": "./static/css/main.8f8a49c4.css.map",
-    "main.a1bff3ce.js.map": "./static/js/main.a1bff3ce.js.map"
+    "main.470e36c9.js.map": "./static/js/main.470e36c9.js.map"
   },
   "entrypoints": [
     "static/css/main.8f8a49c4.css",
-    "static/js/main.a1bff3ce.js"
+    "static/js/main.470e36c9.js"
   ]
 }
